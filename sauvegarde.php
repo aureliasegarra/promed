@@ -49,22 +49,43 @@
         <div class="form-wrapper">
             
         </div>
-        <div class="d-flex justify-content-between">
-            <span><h3>Bienvenue:</h3></span>
-            
-            <span><h5><?php setlocale(LC_TIME, 'fr_FR.utf8','fra');
+        <p>
+                <span><h3>Bienvenue</h3><h5 align="right"><?php setlocale(LC_TIME, 'fr_FR.utf8','fra');
                                         date_default_timezone_set('Europe/Paris');
                                         echo (strftime('%A %d %B %Y '));?></h5>
+                                        <h5 align="right"><?php echo (strftime('%H:%M'));?></h5></h3></span>
 
-                                        <?php echo (strftime('%H:%M'));?></span>
-           
-        </div>
-       <div class="d-flex justify-content-between"></div>
-            <span><h5>Mon activité:</h5></span>
-            
-</p>
-              
-
+<table>
+  <tr>
+    <td class='left'>Bienvenue</td>
+    <td class='right'><?php setlocale(LC_TIME, 'fr_FR.utf8','fra');
+                                        date_default_timezone_set('Europe/Paris');
+                                        echo (strftime('%A %d %B %Y '));?></h5>
+                                        <h5 align="right"><?php echo (strftime('%H:%M'));?></td>
+  </tr>
+</table>
+                                    
+				Mon activité:</P>
+				
+				
+				<div align="left">
+    <h1></h1>
+    <form method="post" action="">
+        <input type="rdv" placeholder="rdv" name="rdv"><br></br>
+		<input type="" placeholder="" name=""><br></br>
+		<input type="" placeholder="" name=""><br></br>
+		<input type="" placeholder="" name=""><br></br>
+		<input type="" placeholder="" name=""><br></br>
+		<input type="" placeholder="" name=""><br></br>
+		<input type="" placeholder="" name=""><br></br>
+                               
+	        
+    </div>  
+        
+    </div>
+    
+	
+	
        
 </body>
 </html>
