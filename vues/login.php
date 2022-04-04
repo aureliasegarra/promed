@@ -49,8 +49,8 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 
 public function create($objet)
 {
-    $sql = "INSERT INTO $this->table (nom,prenom,activite,adr,email,numeroadeli,) VALUES (:nom, :prenom, :activite, :adr, :email, :numeroadeli)";
-    $stmt = Connexion::getInstance()->prepare($sql);
+    $sql = connexionPDO()"INSERT INTO $this->table (nom,prenom,activite,adr,email,numeroadeli,) VALUES (:nom, :prenom, :activite, :adr, :email, :numeroadeli)";
+    $stmt = getInstance()->prepare($sql);
     $nom = $objet->getnom();
     $prenom = $objet->getprenom();
     $activite = $objet->getactivite();
