@@ -22,6 +22,54 @@ if(isset($_POST['sub'])){
 }
 
 
+function connexionPDO():PDO {
+    $login = "root";
+    $mdp = "";
+    $bd = "promed";
+    $serveur = "localhost";
+
+    try {
+        $conn = new PDO("mysql:host=$serveur;dbname=$bd", $login, $mdp, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'')); 
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $conn;
+
+    } catch (PDOException $e) {
+        print "Erreur de connexion PDO ";
+        die();
+    }
+}
+
+if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
+    // prog de test
+    header('Content-Type:text/plain');
+
+    echo "connexionPDO() : \n";
+    print_r(connexionPDO());
+}
+
+public function create($objet)
+{
+    $sql = "INSERT INTO $this->table (nom,prenom,activite,adr,email,numeroadeli,) VALUES (:nom, :prenom, :activite, :adr, :email, :numeroadeli)";
+    $stmt = Connexion::getInstance()->prepare($sql);
+    $nom = $objet->getnom();
+    $nom = $objet->getprenom();
+    $nom = $objet->getactivite();
+    $adr = $objet->getadr();
+    $nom = $objet->getemail();
+    $sal = $objet->getnumeroadeli();
+    $stmt->bindParam(':nom', $nom);
+    $stmt->bindParam(':prenom', $prenom);
+    $stmt->bindParam(':activite', $activite);
+    $stmt->bindParam(':adr', $adr);
+    $stmt->bindParam(':mail', $mail);
+    $stmt->bindParam(':numeroadeli', $numeroadeli);
+    $stmt->execute();
+    $objet->setNumPil(parent::getLastKey());
+}
+
+?>
+
+
 ?>
 
 <!DOCTYPE html>
