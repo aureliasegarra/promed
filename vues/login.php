@@ -69,9 +69,6 @@ public function create($objet)
 
 ?>
 
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
