@@ -1,0 +1,55 @@
+body {
+    margin: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    border: 3px solid blue;
+    height: 900px;
+    margin: 30px;
+    margin-top: 30px;
+}
+
+.trait {
+    height: 1px;
+    width: 80%;
+    margin: -3px auto;
+    background-color: blue;
+}
+
+.form-container {
+    padding: 40px;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid blue;
+    border-radius: 10px;
+
+}
+
+.form-container input {
+    width: 350px;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

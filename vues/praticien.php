@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,24 +14,25 @@
         <nav>
             <div>
                 <img src="../images/promed_logo.jpg" alt="logo promed">
+                <p><img src="../images/logout.png" alt="" class="img-rounded pull-right" width="100" ></p> 
             </div>
             <div class="button-wrapper">
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
                     
                         <button type="button" class="btn btn-light border border-primary mr-5">
-                            <a class="nav-link active" href="#">Praticien</a>
+                            <a class="nav-link active" href="#">+Fiche patient</a>
                         </button>
                        
                     </li>
                     <li class="nav-item">
                         <button type="button" class="btn btn-light border border-primary mr-5">
-                            <a class="nav-link active" href="#">Patient</a>
+                            <a class="nav-link active" href="#">consulter</a>
                         </button>
                     </li>
                     <li class="nav-item">
                         <button type="button" class="btn btn-light border border-primary mr-5">
-                            <a class="nav-link active" href="#">Inscription</a>
+                            <a class="nav-link active" href="#">parametre</a>
                         </button>
                     </li>
                 </ul>
