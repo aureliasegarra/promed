@@ -52,11 +52,11 @@ public function create($objet)
     $sql = "INSERT INTO $this->table (nom,prenom,activite,adr,email,numeroadeli,) VALUES (:nom, :prenom, :activite, :adr, :email, :numeroadeli)";
     $stmt = Connexion::getInstance()->prepare($sql);
     $nom = $objet->getnom();
-    $nom = $objet->getprenom();
-    $nom = $objet->getactivite();
+    $prenom = $objet->getprenom();
+    $activite = $objet->getactivite();
     $adr = $objet->getadr();
-    $nom = $objet->getemail();
-    $sal = $objet->getnumeroadeli();
+    $email = $objet->getemail();
+    $numeroadeli = $objet->getnumeroadeli();
     $stmt->bindParam(':nom', $nom);
     $stmt->bindParam(':prenom', $prenom);
     $stmt->bindParam(':activite', $activite);
