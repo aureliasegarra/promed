@@ -12,21 +12,21 @@
 <body>   
     
     <div class="wrapper">
-        <nav>                   
-            <img src="../images/promed_logo.jpg" alt="" class="img-rounded pull-right" width="200" >     
-                          
-                      
-        </nav>
+        <nav> 
+            <div>                  
+            <img src="../images/promed_logo.jpg" alt="" class="img-rounded pull-right" width="200" > </div>    
+       
         <div class="trait"></div>
-        <div class="form-wrapper">    
+        <div class="form-wrapper">   
             
         </div>
         <div class="container">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between"></div>
             <span> <img src="../images/avatar.png" alt="" class="img-rounded pull-right" width="150" >   </span>
-            <div>
-  <span> </span>
-</div>
+           
+            </div>
+  </nav>
+
             <span><h5><?php setlocale(LC_TIME, 'fr_FR.utf8','fra');
                                         date_default_timezone_set('Europe/Paris');
                                         echo (strftime('%A %d %B %Y '));?></h5>
@@ -59,6 +59,8 @@
                
                 
                 <input type="text" placeholder="Consultation" value=""><br>
+                <br> </br>
+                <input type="text" placeholder="Annuler ce rendez-vous" value=""><br>
                 <div class="middle_button">
                    <div class="left_button">
                     

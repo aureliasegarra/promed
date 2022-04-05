@@ -38,7 +38,7 @@
                        
                         <li class="nav-item">  
 
-                        <p><img src="../images/logout.png" alt="" class="img-rounded pull-right" width="85" ></p>   
+                        <p><img src="../images/logout.png" alt="" class="img-rounded pull-right" width="90" ></p>   
                         
                      
                         </button>
