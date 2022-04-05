@@ -38,55 +38,42 @@
             <span><h5>Nom</h5></span>                    
   
      
-            <table class="table">
-        <thead>
-          <tr>
-            <th><font color="ff0000">RDV</font></th>
-            <th><font color="ff0000">Patients</font></th>
-            <th><font color="ff0000">Prise en charge</font></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
+            <div class="row">
+            <div class="col">
+                
+                <h5> </h5>
+                
+              <div> 
 
-          <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
+                </div>
+            </div>
 
-          <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
+            <div class="col">
+                <h5> Votre patient </h5>
+                <br></br>
+                
+                <div><h5>Vos prise en charge à venir </h5></div>
+                <input type="date" class="form-control mb-3">
+                <br></br> 
+                <h5> Type de prise en charge : </h5>
+               
+                
+                <input type="text" placeholder="Consultation" value=""><br>
+                <div class="middle_button">
+                   <div class="left_button">
+                    
+                </div>
+                </div>
+            </div>
 
-          <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
+            <div class="col">
+                <div class="photo">
 
-          <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-
-          <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-
-
-        </tbody>
-      </table>
-    </div>   
+                </div>
+                <h5> Nom </h5>
+                <h5> Profession</h5>
+            </div>
+            
        
 </body>
 </html>
