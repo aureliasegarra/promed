@@ -1,7 +1,3 @@
-<?php 
-require_once('layout.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +6,12 @@ require_once('layout.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/styles.css">
-
-    <title>ProMed</title>
+    <title>Accueil</title>
 </head>
 <body>
-    <div class="container">
+<div class="container-md">
         <nav>
-            <div>
+            <div class="">
                 <img src="./static/images/promed_logo.jpg" alt="logo promed">
             </div>
             <div class="button-wrapper">
@@ -41,24 +36,15 @@ require_once('layout.php');
                 </ul>
             </div>
         </nav>
-        <div class="trait"></div>
-        <div class="form-wrapper">
-            <form class="form-container"> 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Mot de passe</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Entrez votre mot de passe">
-                </div>
-                <button type="submit" class="btn-lg btn-primary mt-3">Valider</button>
-            </form>
-        </div>
-            
-       
+        <div class="trait mb-5"></div>
+        
+
     </div>
-    
        
+    <div class="mt-5 message_homepage">
+        <h1>Bienvenue sur Promed !</h1>
+        <h3>Votre application de gestion de patients</h3>
+        <h4>Merci de vous connecter</h4>
+    </div>
 </body>
 </html>
