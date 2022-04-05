@@ -72,3 +72,21 @@ table td{
     text-align: right;
 }
 .inline {display : inline-block;}
+
+.image {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100px;
+    z-index:100;
+    }
+    
+    .image img {
+    width:100%;
+    }
+    
+    .texte {
+    position:relative;
+    width:300px;
+    z-index:10;
+    }
