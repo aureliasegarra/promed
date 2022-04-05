@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
 
+    <head>
+    <title></title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
     <title>ProMed</title>
 </head>
 <body>
@@ -60,11 +66,60 @@
            
         </div>
        <div class="d-flex justify-content-between"></div>
-            <span><h5>Mon activité:</h5></span>
-            
-</p>
-              
+            <span><h5>Mon activité:</h5></span>                    
+  
+</div>
 
+     
+      <table class="table">
+        <thead>
+          <tr>
+            <th><font color="ff0000">RDV</font></th>
+            <th><font color="ff0000">Patients</font></th>
+            <th><font color="ff0000">Prise en charge</font></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>   
        
 </body>
 </html>
