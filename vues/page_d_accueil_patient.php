@@ -49,7 +49,7 @@
             </div>
 
             <div class="col">
-                <h5> Votre patient </h5>
+                <h5> Votre praticien</h5>
                 <br></br>
                 
                 <div><h5>Vos prise en charge à venir </h5></div>
