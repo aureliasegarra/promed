@@ -1,0 +1,18 @@
+@media (max-width:767px) {
+    .header-top-social{
+        margin-right:1rem
+    }
+    .about-list{
+        column-count: 1;
+    }
+    .grid-card .card{
+        margin:0 0 1rem 0;
+        position: relative;
+    }
+    .about-us{
+        padding-top:3rem;
+    }
+    .header-top button{
+        font-size: .7rem;
+    }
+}
