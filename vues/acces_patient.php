@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                     <ul class="header-bottom-menu-list navbar-nav">
                         <li><a href="../index.html">Accueil</a></li>
-                        <li><a href="./vues/acces_praticien.php">Praticiens</a></li>
+                        <li><a href="./acces_praticien.php">Praticiens</a></li>
                         <li><a href="./acces_patient.php">Patients</a></li>
                         <li><a href="./inscription.php">Inscription</a></li>
                     </ul>
@@ -39,7 +39,7 @@
                     <div class="container">
                         <div class="row mt-3">
                             <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
-                                <h2>Connection Praticien</h2>
+                                <h2>Connection Patient</h2>
                                 <h4>Bienvenue, veuillez vous connecter</h4>
                             
                             </div>

@@ -22,13 +22,13 @@
                 <button class="navbar-toggler header-btn-collapse-nav tetx-white" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toogle Navigation">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </button>
-                <a href="../index.html" class="logo"> <img src="../static/images/logo.png" alt=""> </a>
+                <a href="index.html" class="logo"> <img src="../static/images/logo.png" alt="logo"> </a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                     <ul class="header-bottom-menu-list navbar-nav">
-                        <li><a href="../index.html">Accueil</a></li>
-                        <li><a href="./vues/acces_praticien.php">Praticiens</a></li>
-                        <li><a href="./acces_patient.php">Patients</a></li>
-                        <li><a href="./inscription.php">Inscription</a></li>
+                        <li><a href="">Ajouter fiche patient</a></li>
+                        <li><a href="">Consulter</a></li>
+                        <li><a href="">Paramètres</a></li>
+                        <li><i class="fa-solid fa-right-from-bracket"></i></li>
                     </ul>
                 </div>
             </nav>
@@ -36,31 +36,49 @@
 
         <div class="main-wrapper">
             <section class="connexion">
-                    <div class="container">
-                        <div class="row mt-3">
-                            <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
-                                <h2>Connection Praticien</h2>
-                                <h4>Bienvenue, veuillez vous connecter</h4>
-                            
-                            </div>
+                <div class="container">
+                    <div class="row mt-3">
+                        <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
+                            <h2>Bienvenue Jean Trucmuche</h2>
+                            <h4>Mon activité : <span> Infirmier</span></h4>
                         </div>
                     </div>
+                </div>
             </section>
-            <section class="container">
-                <form class="form-wrapper">
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre email">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Votre mot de passe">
-                    </div>
-                   
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+            <section class="table-wrapper">
+                <div class="container">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col"></th>
+                            <th scope="col">RDV</th>
+                            <th scope="col">Patients</th>
+                            <th scope="col">Prise en charge</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th scope="row"><i class="fa-solid fa-gear"></i></th>
+                            <td>9h</td>
+                            <td>ARIO Mélanie</td>
+                            <td>Consultation</td>
+                            </tr>
+                            <tr>
+                            <th scope="row"><i class="fa-solid fa-gear"></i></th>
+                            <td>9h30</td>
+                            <td>Morin Bernard</td>
+                            <td>Suivi</td>
+                            </tr>
+                            <tr>
+                            <th scope="row"><i class="fa-solid fa-gear"></i></th>
+                            <td>10h</td>
+                            <td>Dian Marco</td>
+                            <td>Suivi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
-            
            
            
             
@@ -69,10 +87,6 @@
                     <p class="text-left text-white"></p>
                     <h3 class="text-white"></h3>
                     <div class="row my-3">
-                        
-                       
-                        
-                        
                     </div>
                 </div>
             </section>
