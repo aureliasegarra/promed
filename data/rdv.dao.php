@@ -1,0 +1,131 @@
+<?php
+
+namespace DAO{
+
+    require_once "bd.dao.php";
+    require_once "bd.connect.php";
+
+    use DAO\DAO;
+    use DBConnexion\Connexion;
+
+ 
+    class RdvDao extends DAO{
+
+    
+
+        function __construct()
+        {
+			parent::__construct("id", "rdv");
+        }
+
+
+        public function read($id)
+        {
+            $sql = "SELECT * FROM rdv WHERE $this->key=:id";
+            $stmt = Connexion::connexionPDO()->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+
+            $row = $stmt->fetch();
+
+            // $id = $row["id"];
+            // $nom = $row["nom"];
+            // $prenom = $row["prenom"];
+            // $email = $row["email"];
+            // $activite = $row["activité"];
+            // $rpps = $row["rpps"];
+            
+            
+            // $rep = new \User\Praticien($nom, $prenom, $email, $activite, $rpps);
+            // $rep->setNom($nom);
+            // return $rep;
+        }
+
+        public function update($objet)
+        {
+            // $sql = "UPDATE praticien SET nom = :nom, prenom = :prenom, email = :email, activité= :activite, rpps=:rpps  WHERE $this->key=:id";
+            // $stmt = Connexion::connexionPDO()->prepare($sql);
+            // $nom = $objet->getNom();
+            // $prenom = $objet->getPrenom();
+            // $email = $objet->getEmail();   
+            // $activite = $objet->getActivite();
+            // $rpps= $objet->getRpps();       
+          
+            // $stmt->bindParam(':nom', $nom);
+            // $stmt->bindParam(':prenom', $prenom);
+            // $stmt->bindParam(':email', $email);
+            // $stmt->bindParam(':activite', $activite);
+            // $stmt->bindParam(':rpps', $rpps);
+            // $stmt->execute();
+        }
+
+
+        public function delete($id)
+        {
+			
+			$sql = "DELETE FROM rdv WHERE $this->key=:id";
+            $stmt = Connexion::connexionPDO()->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();  
+
+  
+			
+        }
+
+        public function create($objet)
+        {
+            // $sql = "INSERT INTO praticien (nom,prenom,email,activite,rpps) VALUES (:nom, :prenom, :email, :activite, :rpps)";
+            // $stmt = Connexion::connexionPDO()->prepare($sql);
+            // $nom = $objet->getNom();
+            // $prenom = $objet->getPrenom();
+            // $email = $objet->getEmail();
+            // $activite = $objet->getActivite();
+            // $rpps= $objet->getRpps();   
+
+            // $stmt->bindParam(':nom', $nom);
+            // $stmt->bindParam(':prenom', $prenom);
+            // $stmt->bindParam(':email', $email);
+            // $stmt->bindParam(':activite', $activite);
+            // $stmt->bindParam(':rpps', $rpps);
+
+            // $stmt->execute();
+            // $objet->setNom(parent::getLastKey());
+        }
+
+        static function getRdv() {
+        
+            //     $req = "select * from praticien";
+            //     $rep = "<table class=\"table table-striped\">";	
+            //     $rows = Connexion::connexionPDO()->query($req);
+
+            //     foreach ($rows as $row) {
+            //         $rep .= "<tr><td>" . $row["nom"];
+            //         $rep .= "</td><td>" . $row["prenom"];
+            //         $rep .= "</td><td>" . $row["email"];
+            //         $rep .= "</td><td>" . $row["activité"];
+            //         $rep .= "</td><td>" . $row["rpps"];
+            //      "</td></tr>";
+                   
+            //     }
+        
+            // return $rep;
+        }
+
+       public function getRdvByPraticien($idPraticien) {
+
+            try {
+                $cnx = Connexion::connexionPDO();
+                $req = $cnx->prepare("select * from rdv join praticien on rdv.id_praticien = praticien.id where id_praticien=:id_praticien");
+                $req->bindValue(':id_praticien', $idPraticien, \PDO::PARAM_STR);
+                $req->execute();
+                
+                $resultat = $req->fetch(\PDO::FETCH_ASSOC);
+            } catch (\PDOException $e) {
+                print "Erreur !: " . $e->getMessage();
+                die();
+            }
+            return $resultat;
+            }
+
+    }
+}
