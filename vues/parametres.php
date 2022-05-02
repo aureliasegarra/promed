@@ -39,7 +39,7 @@
                 <div class="container">
                     <div class="row mt-3 d-flex justify-content-center">
                         <div class="d-flex justify-content-center mt-5 mb-5">
-                            <h3>Mon profil</h3>
+                            <h3>Mon profil </h3>
                         </div> 
                     </div>
                 </div>
