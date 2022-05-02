@@ -50,7 +50,7 @@
                         <div class="col mr-4">
                         
                             <div class="container mb-5">
-                                    <div class="search w-60 d-flex justify-content-center align-items-center"> <i class="fa fa-search mr-2"></i> <input type="text" class="form-control" placeholder="Entrez le nom d'un patient"> <button class="btn btn-primary">Chercher</button> </div>
+                                    <div class="search w-60 d-flex justify-content-center align-items-center"> <i class="fa fa-search mr-2"></i> <input type="text" class="form-control" placeholder="search ..."> <button class="btn btn-primary">Chercher</button> </div>
                             </div>
 
                             <label class="form-label">DATES DE RENDEZ-VOUS</label>
