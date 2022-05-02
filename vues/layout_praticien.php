@@ -24,8 +24,9 @@
         <a href="./?action=home" class="logo"> <img src="./static/images/logo.png" alt="logo"> </a>
         <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
             <ul class="header-bottom-menu-list navbar-nav">
+                <li><a href="#">Rendez-vous</a></li>
                 <li><a href="./?action=ajoutPatient">Ajouter fiche patient</a></li>
-                <li><a href="./?action=consulte">Consulter</a></li>
+                <li><a href="">Consulter</a></li>
                 <li><a href="./?action=parametres">Paramètres</a></li>
                 <li><a href="./?action=home"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>

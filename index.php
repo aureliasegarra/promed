@@ -11,7 +11,6 @@ if (isset($_GET["action"])) {
    }
 
     $fichier = controleurPrincipal($action);
-    include CONTROLLER_PATH."/".$fichier;
-    
+    include CONTROLLER_PATH."/".$fichier;    
 
 ?>

@@ -113,19 +113,17 @@ namespace DAO{
 
        public function getRdvByPraticien($idPraticien) {
 
-            try {
-                $cnx = Connexion::connexionPDO();
-                $req = $cnx->prepare("select * from rdv join praticien on rdv.id_praticien = praticien.id where id_praticien=:id_praticien");
-                $req->bindValue(':id_praticien', $idPraticien, \PDO::PARAM_STR);
-                $req->execute();
-                
-                $resultat = $req->fetch(\PDO::FETCH_ASSOC);
-            } catch (\PDOException $e) {
-                print "Erreur !: " . $e->getMessage();
-                die();
-            }
-            return $resultat;
-            }
+        $req = "select * from rdv join patient on rdv.id_patient=patient.id join prise_en_charge on prise_en_charge.id = rdv.id_pec where id_praticien=$idPraticien ";
+        $rep = "";	
+        $rows = Connexion::connexionPDO()->query($req);
 
-    }
+        foreach ($rows as $row) {    
+            $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $row["date_heure"];
+            $rep .= "</td><td>" . $row["prenom"]." ". $row["nom"];
+            $rep .= "</td><td>" . $row["type"];        
+            "</td></tr>";                
+        }
+    return $rep;
+}
+}
 }

@@ -7,8 +7,7 @@
                 <div class="container">
                     <div class="row mt-3">
                         <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
-                            <h2><?php echo "Bienvenue"." ".$_SESSION["nomPrenom"]; ?></h2>                         
-                            <h2><?=$test2; ?></h2>     
+                            <h2><?php echo "Bienvenue"." ".$_SESSION["nomPrenom"]; ?></h2>                        
                             <h4>Mon activité : <span> <?=$activite?></span></h4>
                         </div>
                     </div>
@@ -26,27 +25,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <th scope="row"><i class="fa-solid fa-gear"></i></th>
-                            <td>9h</td>
-                            <td>ARIO Mélanie</td>
-                            <td>Consultation</td>
-                            </tr>
-                            <tr>
-                            <th scope="row"><i class="fa-solid fa-gear"></i></th>
-                            <td>9h30</td>
-                            <td>Morin Bernard</td>
-                            <td>Suivi</td>
-                            </tr>
-                            <tr>
-                            <th scope="row"><i class="fa-solid fa-gear"></i></th>
-                            <td>10h</td>
-                            <td>Dian Marco</td>
-                            <td>Suivi</td>
-                            </tr>
+                        <?=$tableRdv;?>
                         </tbody>
                     </table>
                 </div>
+                
+
             </section>
            
            

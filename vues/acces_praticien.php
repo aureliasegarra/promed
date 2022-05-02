@@ -13,7 +13,7 @@
                     </div>
             </section>
             <section class="container">
-                <form class="form-wrapper" method="post" action="./?action=connexion">
+                <form class="form-wrapper" method="post" action="./?action=connect">
                     <div class="mb-3">
                         <label class="form-label">Rpps</label>
                         <input name="rpps" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre Rpps">

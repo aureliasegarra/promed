@@ -17,15 +17,12 @@ if (isset($_POST["identifiant"]) && isset($_POST["mot_de_passe_patient"])) {
 
 }
 
-if (isset($_POST["rpps"]) && isset($_POST["mot_de_passe_praticien"])) {
+if (isset($_POST["rpps"]) && isset($_POST["mot_de_passe_praticien"]))  {
     $identifiant = $_POST["rpps"];
     $mdp = $_POST["mot_de_passe_praticien"];
     loginPraticien($identifiant, $mdp);
 }
-/* else {
-    $identifiant = "";
-    $mdp = "";
-}*/
+
 
 function loginPatient($identifiant, $mdp)
 {
@@ -44,9 +41,9 @@ function loginPatient($identifiant, $mdp)
     }
 
     if (isLoggedOnPatient()) {
-
-        include VIEW_PATH . "/layout_praticien.php";
-        include VIEW_PATH . "/accueil_praticien.php";
+        echo "Code ok";
+        // include VIEW_PATH . "/layout_praticien.php";
+        // include VIEW_PATH . "/accueil_praticien.php";
     } else {
         echo "Page d'erreur de login";
     }
@@ -80,10 +77,10 @@ function loginPraticien($identifiant, $mdp)
 
 
     $util = (new DAO\PraticienDao)->getPraticienByRpps($identifiant);
-    $essai = (new DAO\PraticienDao)->getPraticiens();
     $mdpBD = $util["mot_de_passe"];
     $name = $util["nom"];
     $prenom = $util["prenom"];
+    $id = $util["id"];
     $activite = $util["activite"];
 
 
@@ -93,11 +90,13 @@ function loginPraticien($identifiant, $mdp)
         $_SESSION["identifiant"] = $identifiant;
         $_SESSION["mot_de_passe"] = $mdpBD;
         $_SESSION["nomPrenom"] = $prenom." ".$name;
+        $_SESSIOn["id"]=$id;
     }
 
     if (isLoggedOnPraticien()) {
-        $test =(new DAO\RdvDao)->getRdvByPraticien($util['id']);
-        $test2 = $test['id_patient'];
+        // $test =(new DAO\RdvDao)->getRdvByPraticien($util['id']);
+        // $test2 = $test['id_patient'];
+        $tableRdv = (new DAO\RdvDao)->getRdvByPraticien($_SESSIOn["id"]);
         include VIEW_PATH . "/layout_praticien.php";
         include VIEW_PATH . "/accueil_praticien.php";
     } else {

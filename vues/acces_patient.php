@@ -13,7 +13,7 @@
                     </div>
             </section>
             <section class="container">
-                <form class="form-wrapper" method="post" action="./?action=connexion">
+                <form class="form-wrapper" method="post" action="./?action=connect">
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input name="identifiant" type="email" class="form-control" id="identifiant" aria-describedby="emailHelp" placeholder="Votre email">
