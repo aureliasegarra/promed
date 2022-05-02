@@ -9,7 +9,9 @@ function controleurPrincipal($action)
     $lesActions["accesPraticien"] = "PraticienController.php";
     $lesActions["accesPatient"] = "PatientController.php";
     $lesActions["parametres"] = "ParametresController.php";
-    $lesActions["ajoutPatient"] = "FichePatientController.php";
+    $lesActions["addPatient"] = "AddFichePatientController.php";
+    $lesActions["consult"] = "ConsultFichePatientController.php";
+
 
 
 
