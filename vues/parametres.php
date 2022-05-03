@@ -2,7 +2,9 @@
 session_start();
 ?>
 
-
+<!DOCTYPE html>
+<html lang="en">
+<body>
 <div class="main-wrapper">
             <section class="connexion">
                 <div class="container">
@@ -84,7 +86,8 @@ session_start();
                 </div>
                 
             </section>
-           
+</body>
+</html>
            
             
    

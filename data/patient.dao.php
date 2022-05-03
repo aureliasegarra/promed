@@ -31,11 +31,10 @@ namespace DAO{
             $id = $row["id"];
             $nom = $row["nom"];
             $prenom = $row["prenom"];
-            $email = $row["email"];
+            $email = $row["email"];            
             
-            
-            $rep = new \User\Patient($nom, $prenom, $email);
-            $rep->setNom($nom);
+            $rep = new \Model\Patient($nom, $prenom, $email);
+            // $rep->setNom($nom);
             return $rep;
         }
 

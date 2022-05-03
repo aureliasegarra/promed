@@ -14,7 +14,6 @@ if (isset($_POST["identifiant"]) && isset($_POST["mot_de_passe_patient"])) {
     $identifiant = $_POST["identifiant"];
     $mdp = $_POST["mot_de_passe_patient"];
     loginPatient($identifiant, $mdp);
-
 }
 
 if (isset($_POST["rpps"]) && isset($_POST["mot_de_passe_praticien"]))  {
@@ -33,7 +32,6 @@ function loginPatient($identifiant, $mdp)
     $util =  (new DAO\PatientDao)->getPatientByMail($identifiant);
     $mdpBD = $util["mot_de_passe"];
     $id = $util["id"];
-
 
     if ($mdpBD == $mdp) {
 
@@ -104,7 +102,7 @@ function loginPraticien($identifiant, $mdp)
     }
 
     if (isLoggedOnPraticien()) {
-        
+
         $tableRdv = (new DAO\RdvDao)->getRdvByPraticien($_SESSION["id"]);
         include VIEW_PATH . "/layout_praticien.php";
         include VIEW_PATH . "/accueil_praticien.php";

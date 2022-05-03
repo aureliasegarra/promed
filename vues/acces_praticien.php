@@ -1,5 +1,6 @@
-
-
+<!DOCTYPE html>
+<html lang="en">
+<body>
         <div class="main-wrapper">
             <section class="connexion">
                     <div class="container">
@@ -26,7 +27,8 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </section>
-            
+            </body>
+</html>       
            
            
        

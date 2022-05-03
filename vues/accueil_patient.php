@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
 <div class="main-wrapper">
             <section class="connexion">
                 <div class="container mt-5">
@@ -31,5 +34,6 @@
                     </div>
                 </div>
             </section>
-           
+            </body>
+</html>        
          

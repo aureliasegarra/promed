@@ -36,7 +36,7 @@ namespace DAO{
             $rpps = $row["rpps"];
             
             
-            $rep = new \User\Praticien($nom, $prenom, $email, $activite, $rpps);
+            $rep = new \Model\Praticien($nom, $prenom, $email, $activite, $rpps);
             $rep->setNom($nom);
             return $rep;
         }

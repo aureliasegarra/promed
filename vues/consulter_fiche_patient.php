@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
 <div class="main-wrapper">
             <section class="connexion">
                 <div class="container">
@@ -83,15 +86,15 @@
                                 
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>               
                     
                     
                         
                 </div>
                 
             </section>
-           
+            </body>
+</html>       
            
             
     
