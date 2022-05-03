@@ -1,4 +1,4 @@
-*,*::after, *::before{
+    *,*::after, *::before{
     box-sizing:border-box;
 }
 body{
@@ -70,6 +70,10 @@ nav{
     color: #ffffff;
     border: 0;
     font-size: .87rem;
+}
+
+.section_404 {
+    background-color: #ffffff;
 }
 
 .logo img{
