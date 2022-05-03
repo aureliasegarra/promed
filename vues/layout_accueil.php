@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,22 +19,23 @@
 
 </head>
 
-<body>   
-<div class="container header">
-            <nav class="navbar navbar-expand-lg border-0">
-                <button class="navbar-toggler header-btn-collapse-nav tetx-white" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toogle Navigation">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </button>
-                <a href="./?action=home" class="logo"> <img src="./static/images/logo.png" alt="logo"> </a>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
-                    <ul class="header-bottom-menu-list navbar-nav">
-                        <li><a href="./?action=home">Accueil</a></li>
-                        <li><a href="./?action=accesPraticien">Praticiens</a></li>
-                        <li><a href="./?action=accesPatient">Patients</a></li>
-                        <li><a href="./?action=inscription">Inscription</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+<body>
+    <div class="container header">
+        <nav class="navbar navbar-expand-lg border-0">
+            <button class="navbar-toggler header-btn-collapse-nav tetx-white" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toogle Navigation">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <a href="./?action=home" class="logo"> <img src="./static/images/logo.png" alt="logo"> </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+                <ul class="header-bottom-menu-list navbar-nav">
+                    <li><a href="./?action=home">Accueil</a></li>
+                    <li><a href="./?action=accesPraticien">Praticiens</a></li>
+                    <li><a href="./?action=accesPatient">Patients</a></li>
+                    <li><a href="./?action=inscription">Inscription</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </body>
+
 </html>
