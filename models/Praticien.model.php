@@ -9,15 +9,17 @@ namespace User{
 		private $email;
 		private $rpps;
         private $activite;
+		private $mot_de_passe;
 	
 
-	function __construct($nom,$prenom,$email,$rpps,$activite) 
+	function __construct($nom,$prenom,$email,$rpps,$activite, $mot_de_passe) 
     {
 			$this->nom= $nom;
 			$this->prenom = $prenom;
 			$this->email = $email;
             $this->rpps = $rpps;
             $this->activite = $activite;
+			$this->mot_de_passe = $mot_de_passe;
 
 		}
 
@@ -41,10 +43,16 @@ namespace User{
 			return $this->email;
 		}
 
+		public function getMdp() {
+			return $this->mot_de_passe;
+		}
+
 		public function setNom($nom) {
 			$this->nom = $nom;
 			return $this;
 		}
+
+		
 
 
 		public function addPraticien()

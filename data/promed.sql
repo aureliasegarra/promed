@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `praticien` (
   `id_adresse` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `rpps` bigint(20) NOT NULL,
-  `activité` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `activite` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `mot_de_passe` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_adresse` (`id_adresse`)
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `praticien` (
 -- Déchargement des données de la table `praticien`
 --
 
-INSERT INTO `praticien` (`id`, `nom`, `prenom`, `id_adresse`, `email`, `rpps`, `activité`, `mot_de_passe`) VALUES
+INSERT INTO `praticien` (`id`, `nom`, `prenom`, `id_adresse`, `email`, `rpps`, `activite`, `mot_de_passe`) VALUES
 (1, 'Tournesol', 'pierre', 1, 'pierre.t@free.com', 56253, 'infirmier', '12345678'),
 (2, 'Raoult', 'Jean', 3, 'jr@gmail.com', 23654, 'podologue', '12345678'),
 (3, 'Dodu', 'Marc', 5, 'md@free.com', 564325, 'kinésitherapeute', '12345678');

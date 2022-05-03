@@ -41,9 +41,9 @@ function loginPatient($identifiant, $mdp)
     }
 
     if (isLoggedOnPatient()) {
-        echo "Code ok";
-        // include VIEW_PATH . "/layout_praticien.php";
-        // include VIEW_PATH . "/accueil_praticien.php";
+        
+        include VIEW_PATH . "/layout_patient.php";
+        include VIEW_PATH . "/accueil_patient.php";
     } else {
         echo "Page d'erreur de login";
     }
