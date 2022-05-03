@@ -15,5 +15,7 @@ define("RDVDAO", DATA_PATH.'/rdv.dao.php');
 
 define("CONNECTION_CONTROLLER", CONTROLLER_PATH.'/ConnectionController.php');
 define("MAIN_CONTROLLER", CONTROLLER_PATH."/MainController.php");
+define("PATIENT_CONTROLLER", CONTROLLER_PATH.'/PatientController.php');
+
 
 ?>

@@ -92,24 +92,6 @@ namespace DAO{
             // $objet->setNom(parent::getLastKey());
         }
 
-        static function getRdv() {
-        
-            //     $req = "select * from praticien";
-            //     $rep = "<table class=\"table table-striped\">";	
-            //     $rows = Connexion::connexionPDO()->query($req);
-
-            //     foreach ($rows as $row) {
-            //         $rep .= "<tr><td>" . $row["nom"];
-            //         $rep .= "</td><td>" . $row["prenom"];
-            //         $rep .= "</td><td>" . $row["email"];
-            //         $rep .= "</td><td>" . $row["activité"];
-            //         $rep .= "</td><td>" . $row["rpps"];
-            //      "</td></tr>";
-                   
-            //     }
-        
-            // return $rep;
-        }
 
        public function getRdvByPraticien($idPraticien) {
 
@@ -117,13 +99,35 @@ namespace DAO{
         $rep = "";	
         $rows = Connexion::connexionPDO()->query($req);
 
-        foreach ($rows as $row) {    
-            $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $row["date_heure"];
+        foreach ($rows as $row) {   
+
+            $heure=date_create($row['date_heure'])->format('H:i');
+
+            $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $heure;
             $rep .= "</td><td>" . $row["prenom"]." ". $row["nom"];
             $rep .= "</td><td>" . $row["type"];        
             "</td></tr>";                
         }
     return $rep;
 }
-}
+
+    public function getRdvByPatient($idPatient) {
+
+        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_patient=$idPatient ";
+        $rep = "";	
+        $rows = Connexion::connexionPDO()->query($req);
+
+        foreach ($rows as $row) {   
+
+            $heure=date_create($row['date_heure'])->format('H:i');
+            $date=date_create($row['date_heure'])->format('d/m/Y');
+
+            $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $date;
+            $rep .= "</td><td>" . $heure;  
+            $rep .= "</td><td>" . $row["type"];    
+            "</td></tr>";                
+        }
+    return $rep;
+    }
+    }
 }

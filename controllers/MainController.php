@@ -11,8 +11,7 @@ function controleurPrincipal($action)
     $lesActions["parametres"] = "ParametresController.php";
     $lesActions["addPatient"] = "AddFichePatientController.php";
     $lesActions["consult"] = "ConsultFichePatientController.php";
-
-
+    $lesActions["rdv"] = "RdvController.php";
 
 
     if (array_key_exists($action, $lesActions)) {

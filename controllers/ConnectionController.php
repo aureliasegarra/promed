@@ -32,20 +32,27 @@ function loginPatient($identifiant, $mdp)
 
     $util =  (new DAO\PatientDao)->getPatientByMail($identifiant);
     $mdpBD = $util["mot_de_passe"];
+    $id = $util["id"];
+
 
     if ($mdpBD == $mdp) {
 
         $_SESSION["identifiant"] = $identifiant;
         $_SESSION["mot_de_passe"] = $mdpBD;
         $_SESSION['nomPrenom']= $util['prenom']." ".$util['nom'];
+        $_SESSION['id'] = $id;
     }
 
     if (isLoggedOnPatient()) {
-        echo "Code ok";
-        // include VIEW_PATH . "/layout_praticien.php";
-        // include VIEW_PATH . "/accueil_praticien.php";
+
+        $tableRdv = (new DAO\RdvDao)->getRdvByPatient($_SESSION["id"]);
+        
+        include VIEW_PATH . "/layout_patient.php";
+        include VIEW_PATH . "/accueil_patient.php";
+        include VIEW_PATH . "/footer.php";
+
     } else {
-        echo "Page d'erreur de login";
+        echo "Erreur de login";
     }
 }
 
@@ -90,17 +97,19 @@ function loginPraticien($identifiant, $mdp)
         $_SESSION["identifiant"] = $identifiant;
         $_SESSION["mot_de_passe"] = $mdpBD;
         $_SESSION["nomPrenom"] = $prenom." ".$name;
-        $_SESSIOn["id"]=$id;
+        $_SESSION["id"]=$id;
     }
 
     if (isLoggedOnPraticien()) {
         // $test =(new DAO\RdvDao)->getRdvByPraticien($util['id']);
         // $test2 = $test['id_patient'];
-        $tableRdv = (new DAO\RdvDao)->getRdvByPraticien($_SESSIOn["id"]);
+        $tableRdv = (new DAO\RdvDao)->getRdvByPraticien($_SESSION["id"]);
         include VIEW_PATH . "/layout_praticien.php";
         include VIEW_PATH . "/accueil_praticien.php";
+        include VIEW_PATH . "/footer.php";
+
     } else {
-        echo 'Echec';
+        echo 'Erreur de login';
     }
 }
 
