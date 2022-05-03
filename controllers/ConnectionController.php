@@ -39,6 +39,7 @@ function loginPatient($identifiant, $mdp)
 
         $_SESSION["identifiant"] = $identifiant;
         $_SESSION["mot_de_passe"] = $mdpBD;
+        $_SESSION["nom"] = $util['nom'];
         $_SESSION['nomPrenom']= $util['prenom']." ".$util['nom'];
         $_SESSION['id'] = $id;
     }
@@ -46,6 +47,7 @@ function loginPatient($identifiant, $mdp)
     if (isLoggedOnPatient()) {
 
         $tableRdv = (new DAO\RdvDao)->getRdvByPatient($_SESSION["id"]);
+        $nomPraticien = (new DAO\RdvDao)->getPraticienByPatient($_SESSION["id"]);
         
         include VIEW_PATH . "/layout_patient.php";
         include VIEW_PATH . "/accueil_patient.php";
@@ -98,11 +100,11 @@ function loginPraticien($identifiant, $mdp)
         $_SESSION["mot_de_passe"] = $mdpBD;
         $_SESSION["nomPrenom"] = $prenom." ".$name;
         $_SESSION["id"]=$id;
+
     }
 
     if (isLoggedOnPraticien()) {
-        // $test =(new DAO\RdvDao)->getRdvByPraticien($util['id']);
-        // $test2 = $test['id_patient'];
+        
         $tableRdv = (new DAO\RdvDao)->getRdvByPraticien($_SESSION["id"]);
         include VIEW_PATH . "/layout_praticien.php";
         include VIEW_PATH . "/accueil_praticien.php";

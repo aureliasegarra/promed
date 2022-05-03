@@ -67,9 +67,7 @@ namespace DAO{
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $stmt->bindParam(':id', $id);
             $stmt->execute();  
-
-  
-			
+  			
         }
 
         public function create($objet)
@@ -96,6 +94,8 @@ namespace DAO{
        public function getRdvByPraticien($idPraticien) {
 
         $req = "select * from rdv join patient on rdv.id_patient=patient.id join prise_en_charge on prise_en_charge.id = rdv.id_pec where id_praticien=$idPraticien ";
+        $stmt = Connexion::connexionPDO()->prepare($req);
+        $stmt->bindParam(':id', $$idPraticien);
         $rep = "";	
         $rows = Connexion::connexionPDO()->query($req);
 
@@ -129,5 +129,22 @@ namespace DAO{
         }
     return $rep;
     }
+
+    public function getPraticienByPatient($idPatient) {
+
+        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN praticien ON praticien.id = rdv.id_praticien WHERE id_patient=$idPatient ";
+        $stmt = Connexion::connexionPDO()->prepare($req);
+        $stmt->execute();
+        $row = $stmt->fetch();
+         $nom = $row["nom"];
+         $prenom = $row["prenom"];
+         $activite = $row["activite"];
+
+        $praticien = $prenom." ".$nom." - ".$activite;
+
+        return $praticien;
+    }
+
+
     }
 }

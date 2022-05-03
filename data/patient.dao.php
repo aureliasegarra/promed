@@ -88,22 +88,22 @@ namespace DAO{
             $objet->setNom(parent::getLastKey());
         }
 
-        static function getPatients() {
+        // static function getPatients() {
         
-                $req = "select * from patient";
-                $rep = "<table class=\"table table-striped\">";	
-                $rows = Connexion::connexionPDO()->query($req);
+        //         $req = "select * from patient";
+        //         $rep = "<table class=\"table table-striped\">";	
+        //         $rows = Connexion::connexionPDO()->query($req);
 
-                foreach ($rows as $row) {
-                    $rep .= "<tr><td>" . $row["nom"];
-                    $rep .= "</td><td>" . $row["prenom"];
-                    $rep .= "</td><td>" . $row["email"];
-                 "</td></tr>";
+        //         foreach ($rows as $row) {
+        //             $rep .= "<tr><td>" . $row["nom"];
+        //             $rep .= "</td><td>" . $row["prenom"];
+        //             $rep .= "</td><td>" . $row["email"];
+        //          "</td></tr>";
                    
-                }
+        //         }
         
-            return $rep;
-        }
+        //     return $rep;
+        // }
 
         public function getPatientByMail($identifiant) {
 

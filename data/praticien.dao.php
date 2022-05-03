@@ -100,24 +100,24 @@ namespace DAO{
             $objet->setNom(parent::getLastKey());
         }
 
-        static function getPraticiens() {
+        // static function getPraticiens() {
         
-                $req = "select * from praticien";
-                $rep = "<table class=\"table table-striped\">";	
-                $rows = Connexion::connexionPDO()->query($req);
+        //         $req = "select * from praticien";
+        //         $rep = "<table class=\"table table-striped\">";	
+        //         $rows = Connexion::connexionPDO()->query($req);
 
-                foreach ($rows as $row) {
-                    $rep .= "<tr><td>" . $row["nom"];
-                    $rep .= "</td><td>" . $row["prenom"];
-                    $rep .= "</td><td>" . $row["email"];
-                    $rep .= "</td><td>" . $row["activite"];
-                    $rep .= "</td><td>" . $row["rpps"];
-                 "</td></tr>";
+        //         foreach ($rows as $row) {
+        //             $rep .= "<tr><td>" . $row["nom"];
+        //             $rep .= "</td><td>" . $row["prenom"];
+        //             $rep .= "</td><td>" . $row["email"];
+        //             $rep .= "</td><td>" . $row["activite"];
+        //             $rep .= "</td><td>" . $row["rpps"];
+        //          "</td></tr>";
                    
-                }
+        //         }
         
-            return $rep;
-        }
+        //     return $rep;
+        // }
 
        public function getPraticienByRpps($identifiant) {
 

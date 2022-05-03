@@ -7,7 +7,8 @@
                             <label class="form-label mt-4"><b><?=$_SESSION['nomPrenom']?></b></label>
                         </div>
                         <div class="col">
-                            <h4 class="mb-5">Votre praticien : <b class="ml-3">Sylvain Perrin</b>  - <span>Podologue</span></h4>
+                            <h4 class="mb-5">Votre praticien : <b class="ml-3"><?=$nomPraticien?></b>
+                             <!-- - <span>Podologue</span></h4> -->
                             <h4 class="mb-4">Vos prises en charges à venir :</h4>
                             <div class="mb-5">
                                 <table class="table table-hover">
@@ -20,9 +21,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?=$tableRdv;?>
-
-                                       
+                                    <?=$tableRdv;?>                                       
                                     </tbody>
                                 </table>
                             </div>

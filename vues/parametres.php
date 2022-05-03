@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <div class="main-wrapper">
             <section class="connexion">
                 <div class="container">
@@ -38,15 +43,15 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">EMAIL :</label>
-                                    <input type="text" class="form-control"  placeholder="Entrez votre Email">
+                                    <input type="mail" class="form-control"  placeholder="Entrez votre Email">
                                 </div>
                                 <div class="mb-5">
                                     <label class="form-label">N° RPPS :</label>
                                     <input type="password" class="form-control"  placeholder="Entrez votre N° Adélie">
                                 </div>
                                 <div class="mb-5">
-                                    <input type="text" class="form-control mb-2"   placeholder="Ancien mot de passe">
-                                    <input type="text" class="form-control"   placeholder="Nouveau mot de passe">
+                                    <input type="password" class="form-control mb-2"   placeholder="Ancien mot de passe">
+                                    <input type="password" class="form-control"   placeholder="Nouveau mot de passe">
                                 </div>
                                 <div class="d-flex justify-content-center mt-3">
                                     <button type="button" class="btn btn-primary btn-lg mb-5">Modifier</button>
