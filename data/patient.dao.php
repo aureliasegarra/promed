@@ -34,7 +34,7 @@ namespace DAO{
             $email = $row["email"];
             
             
-            $rep = new \User\Patient($nom, $prenom, $email);
+            $rep = new \Model\Patient($nom, $prenom, $email);
             $rep->setNom($nom);
             return $rep;
         }

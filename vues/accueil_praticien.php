@@ -1,5 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Paris');
+$heure = date('H:i');
+$heurefr = date("H:i", strtotime($heure));
 ?>
         <div class="main-wrapper">
             <section class="connexion">
@@ -11,7 +13,8 @@ date_default_timezone_set('Europe/Paris');
                         </div>
                         <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
                             <h2><?php echo date('d/m/y'); ?></h2>                        
-                            <h4><?php echo date('h:i');?></h4>
+                            <h4><?=$heurefr?></h4>
+
                         </div>
                     </div>
                 </div>

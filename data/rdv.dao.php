@@ -93,7 +93,7 @@ namespace DAO{
 
        public function getRdvByPraticien($idPraticien) {
 
-        $req = "select * from rdv join patient on rdv.id_patient=patient.id join prise_en_charge on prise_en_charge.id = rdv.id_pec where id_praticien=$idPraticien ";
+        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_praticien=$idPraticien ";
         $stmt = Connexion::connexionPDO()->prepare($req);
         $stmt->bindParam(':id', $$idPraticien);
         $rep = "";	
@@ -113,7 +113,7 @@ namespace DAO{
 
     public function getRdvByPatient($idPatient) {
 
-        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_patient=$idPatient ";
+        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_patient=$idPatient AND date_heure=";
         $rep = "";	
         $rows = Connexion::connexionPDO()->query($req);
 
