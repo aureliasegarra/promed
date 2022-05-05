@@ -13,8 +13,7 @@ namespace Model{
 	function __construct($nom,$prenom,$email) {
 			$this->nom= $nom;
 			$this->prenom = $prenom;
-			$this->email = $email;			
-
+			$this->email = $email;
 		}
 
 		public function getNom() {
@@ -52,6 +51,4 @@ namespace Model{
 
     }
 }
-
-
 ?>

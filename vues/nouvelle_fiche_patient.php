@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
-<body>
+<body> -->
     <div class="main-wrapper">
         <section class="connexion">
             <div class="container">
@@ -78,6 +78,6 @@
             </div>
 
         </section>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

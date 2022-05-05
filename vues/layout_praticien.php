@@ -27,7 +27,7 @@
             <a href="./?action=home" class="logo"> <img src="./static/images/logo.png" alt="logo"> </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                 <ul class="header-bottom-menu-list navbar-nav">
-                    <li><a href="./?action=rdv">Rendez-vous</a></li>
+                    <li><a href="./?action=accueilPraticien">Rendez-vous</a></li>
                     <li><a href="./?action=addPatient">Ajouter fiche patient</a></li>
                     <li><a href="./?action=consult">Consulter</a></li>
                     <li><a href="./?action=parametres">Paramètres</a></li>
@@ -36,6 +36,6 @@
             </div>
         </nav>
     </div>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

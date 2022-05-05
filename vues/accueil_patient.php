@@ -1,24 +1,27 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
-<body>
+<body> -->
+
     <div class="main-wrapper">
         <section class="connexion">
             <div class="container mt-5">
                 <div class="row mt-3">
-                    <div class="col d-flex  align-items-center flex-column">
+                    <div class="col d-flex  align-items-center flex-column" id="avatar">
                         <img src="../static/images/patient.png" class="photo_fiche_patient" alt="avatar patient">
                         <label class="form-label mt-4"><b><?= $_SESSION['nomPrenom'] ?></b></label>
                     </div>
-                    <div class="col">
-                        <h4 class="mb-5">Votre praticien : <b class="ml-3"><?= $nomPraticien ?></b>
-                            <!-- - <span>Podologue</span></h4> -->
+                    <div class="col" id="pec">
+                        <!-- <h4 class="mb-5">Votre praticien : <b class="ml-3">                          -->
+                        </b>
                             <h4 class="mb-4">Vos prises en charges à venir :</h4>
                             <div class="mb-5">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
+                                            <th scope="col">Praticien</th> 
+                                            <th scope="col">Activite</th>                                           
                                             <th scope="col">Date rdv</th>
                                             <th scope="col">Heures rdv</th>
                                             <th scope="col">Prise en charge</th>
@@ -35,6 +38,6 @@
                 </div>
             </div>
         </section>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

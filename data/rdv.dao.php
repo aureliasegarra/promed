@@ -94,8 +94,6 @@ namespace DAO{
        public function getRdvByPraticien($idPraticien) {
 
         $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_praticien=$idPraticien";
-        $stmt = Connexion::connexionPDO()->prepare($req);
-        $stmt->bindParam(':id', $$idPraticien);
         $rep = "";	
         $rows = Connexion::connexionPDO()->query($req);
 
@@ -113,38 +111,27 @@ namespace DAO{
 
     public function getRdvByPatient($idPatient) {
 
-        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_patient=$idPatient";
-        $rep = "";	
-        $rows = Connexion::connexionPDO()->query($req);
-
-        foreach ($rows as $row) {   
-
-            $heure=date_create($row['date_heure'])->format('H:i');
-            $date=date_create($row['date_heure'])->format('d/m/Y');
-
-            $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $date;
-            $rep .= "</td><td>" . $heure;  
-            $rep .= "</td><td>" . $row["type"];    
-            "</td></tr>";                
-        }
-    return $rep;
+        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec JOIN praticien ON praticien.id=rdv.id_praticien WHERE id_patient=$idPatient";
+        $rows = Connexion::connexionPDO()->query($req);        
+        
+        return $rows;
     }
 
-    public function getPraticienByPatient($idPatient) {
+    public function getPraticiensRdvByPatient($idPatient) {
 
         $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN praticien ON praticien.id = rdv.id_praticien WHERE id_patient=$idPatient";
-        $stmt = Connexion::connexionPDO()->prepare($req);
-        $stmt->execute();
-        $row = $stmt->fetch();
-         $nom = $row["nom"];
-         $prenom = $row["prenom"];
-         $activite = $row["activite"];
+        $row= Connexion::connexionPDO()->query($req);
+        // $stmt = Connexion::connexionPDO()->prepare($req);
+        // $stmt->execute();
+        // $row = $stmt->fetch();
+        // $nom = $row["nom"];
+        // $prenom = $row["prenom"];
+        // $activite = $row["activite"];
 
-        $praticien = $prenom." ".$nom." - ".$activite;
+        // $praticien = $prenom." ".$nom." - ".$activite;
 
-        return $praticien;
+        return $row;
     }
-
 
     }
 }

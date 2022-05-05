@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
-<body>
+<body> -->
     <div class="main-wrapper">
         <section class="connexion">
             <div class="container">
@@ -49,6 +49,6 @@
                 <button type="submit" class="btn btn-primary">S'enregistrer</button>
             </form>
         </section>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

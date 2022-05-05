@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
-<body>
+<body> -->
     <div class="main-wrapper">
         <section class="connexion">
             <div class="container">
@@ -15,7 +15,7 @@
             </div>
         </section>
         <section class="container">
-            <form class="form-wrapper" method="post" action="./?action=connect">
+            <form class="form-wrapper" method="post" action="./?action=accueilPraticien&connect">
                 <div class="mb-3">
                     <label class="form-label">Rpps</label>
                     <input name="rpps" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre Rpps">
@@ -28,6 +28,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </section>
-</body>
+<!-- </body>
 
-</html>
+</html> -->

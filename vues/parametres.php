@@ -1,11 +1,9 @@
-<?php
-session_start();
-?>
 
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
-<body>
+<body> -->
     <div class="main-wrapper">
         <section class="connexion">
             <div class="container">
@@ -88,6 +86,6 @@ session_start();
             </div>
 
         </section>
-</body>
+<!-- </body>
 
-</html>
+</html> -->
