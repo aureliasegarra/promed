@@ -1,5 +1,7 @@
 <?php
 
+/* fait correspondre l'action de l'url avec un controller */
+
 function controleurPrincipal($action)
 {
     $lesActions = array();

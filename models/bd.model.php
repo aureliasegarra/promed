@@ -1,12 +1,11 @@
 <?php
 
-namespace DAO {
+namespace Model {
 
-    use DBConnexion\Connexion;
+    use Model\Connexion;
 
     abstract class DAO
-    {
-        
+    {        
 
         abstract function read($id);
 
@@ -26,9 +25,9 @@ namespace DAO {
             $this->table = $table;
         }
 
-        function getLastKey()
+        function getLastKey()      
+         
         {
-
             return Connexion::connexionPDO()->lastInsertId();
         }
     }

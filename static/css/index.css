@@ -216,11 +216,6 @@ nav{
     max-width: 20%;
 }
 
-tr{
-    cursor: pointer; 
-    transition: all .25s ease-in-out;
-}
-
 .selected{
     
     background-color: lightblue; 

@@ -1,6 +1,6 @@
 <?php
 
-namespace DBConnexion {
+namespace Model {
 
     use PDO;
     use PDOException;

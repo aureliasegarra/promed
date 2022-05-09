@@ -61,7 +61,7 @@
                     <!-- <h4 class="mb-4 type-pec">Type de prise en charge : <span><em>Consultation</em></span></h4> -->
                     <button id="buttonCancel" type="button" class="btn btn-outline-primary my-5">Annuler ce rendez-vous</button>
 
-                    <script>
+                    <!-- <script>
 
                         function addTextCancel() {
 
@@ -76,7 +76,7 @@
                             addTextCancel()
                         };
 
-                    </script>
+                    </script> -->
 
                 </div>
             </div>
