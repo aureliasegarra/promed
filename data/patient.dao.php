@@ -11,12 +11,57 @@ namespace DAO{
  
     class PatientDao extends DAO{
 
-    
+        // protected $id;
+        // protected $nom;
+        // protected $prenom;
+        // protected $email;
+        // protected $activite;
+        // protected $adress;
+        // protected $datenaissance;
+        // protected $telephone;
+        // protected $genre;
+
 
         function __construct()
         {
 			parent::__construct("id", "patient");
         }
+
+		public function getId() {
+			return $this->id;
+		}
+
+        public function getNom() {
+			return $this->nom;
+		}
+
+        public function getPrenom() {
+			return $this->prenom;
+		}
+
+        public function getEmail() {
+			return $this->email;
+		}
+
+        public function getActivite() {
+			return $this->activite;
+		}
+
+        public function getAdresse() {
+			return $this->adress;
+		}
+
+        public function getDateNaissance(){
+            return $this->datenaissance;
+        }
+
+        public function getTelephone() {
+			return $this->telephone;
+		}
+
+        public function getGenre() {
+			return $this->genre;
+		}
 
 
         public function read($id)
@@ -26,16 +71,18 @@ namespace DAO{
             $stmt->bindParam(':id', $id);
             $stmt->execute();
 
-            $row = $stmt->fetch();
+            return $stmt->fetch();
 
-            $id = $row["id"];
-            $nom = $row["nom"];
-            $prenom = $row["prenom"];
-            $email = $row["email"];            
+            // $row = $stmt->fetch();
+
+            // $id = $row["id"];
+            // $nom = $row["nom"];
+            // $prenom = $row["prenom"];
+            // $email = $row["email"];            
             
-            $rep = new \Model\Patient($nom, $prenom, $email);
-            // $rep->setNom($nom);
-            return $rep;
+            // $rep = new \Model\Patient($nom, $prenom, $email);
+            // // $rep->setNom($nom);
+            // return $rep;
         }
 
         public function update($objet)
@@ -87,22 +134,31 @@ namespace DAO{
             $objet->setNom(parent::getLastKey());
         }
 
-        // static function getPatients() {
-        
-        //         $req = "select * from patient";
-        //         $rep = "<table class=\"table table-striped\">";	
-        //         $rows = Connexion::connexionPDO()->query($req);
+        public function getTable(){
 
-        //         foreach ($rows as $row) {
-        //             $rep .= "<tr><td>" . $row["nom"];
-        //             $rep .= "</td><td>" . $row["prenom"];
-        //             $rep .= "</td><td>" . $row["email"];
-        //          "</td></tr>";
-                   
-        //         }
-        
-        //     return $rep;
-        // }
+			$rdv = (new \DAO\RdvDao)->getRdvByPatient($_SESSION["id"]);
+			$rep = "";
+		  
+				foreach ($rdv as $row) {
+					
+                    // $row = json_decode(json_encode($rew), true);
+					$heure = date_create($row->date_heure)->format('H:i');
+					$date = date_create($row->date_heure)->format('d/m/Y');         
+		
+					$rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th>
+							<td>" .$row->prenom." ". $row->nom;
+					$rep .= "</td><td>" . $row->activite;
+					$rep .= "</td><td>" . $date;
+					$rep .= "</td><td>" . $heure;
+					$rep .= "</td><td>" . $row->type;
+					"</td></tr>";
+				}
+			
+			return $rep;
+
+		}
+
+
 
         public function getPatientByMail($identifiant) {
 
@@ -121,4 +177,3 @@ namespace DAO{
             }
     }
 }
-?>

@@ -3,8 +3,6 @@
 
 session_start();
 
-use DAO\RdvDao;
-
 require_once BD_CONNECT;
 require_once PATIENT_DAO;
 require_once PRATICIEN_DAO;
@@ -19,33 +17,32 @@ if (isset($_POST["identifiant"]) && isset($_POST["mot_de_passe_patient"])) {
 }
 
 
-function loginPatient($identifiant, $mdp)
+function loginPatient($mail, $mdp)
 {
     if (!isset($_SESSION)) {
         session_start();
     }
 
-    $util =  (new DAO\PatientDao)->getPatientByMail($identifiant);
+    $util =  (new DAO\PatientDao)->getPatientByMail($mail);
     $mdpBD = $util["mot_de_passe"];
     $id = $util["id"];
 
     if ($mdpBD == $mdp) {
 
-        $_SESSION["identifiant"] = $identifiant;
+        $_SESSION["identifiant"] = $mail;
         $_SESSION["mot_de_passe"] = $mdpBD;
-        $_SESSION["nom"] = $util['nom'];
-        $_SESSION['nomPrenom'] = $util['prenom'] . " " . $util['nom'];
         $_SESSION['id'] = $id;
     }
 
     if (isLoggedOnPatient()) {
 
-        $tableRdv = getTable();
-        // $nomPraticien = (new DAO\RdvDao)->getPraticienByPatient($_SESSION["id"]);
+        $user = (new DAO\PatientDao());
+        $patient = $user->read($_SESSION['id']);
+        $table = $user->getTable();
 
-        include VIEW_PATH . "/layout_patient.php";
-        include VIEW_PATH . "/accueil_patient.php";
-        include VIEW_PATH . "/footer.php";
+        include_once VIEW_PATH . "/layout_patient.php";
+        include_once VIEW_PATH . "/accueil_patient.php";
+        include_once VIEW_PATH . "/footer.php";
     } else {
         echo "Erreur de login";
     }
@@ -81,28 +78,4 @@ function logout()
     session_destroy();
 }
 
-function getTable()
-{
-    $rdv = (new DAO\RdvDao)->getRdvByPatient($_SESSION["id"]);
-    $praticien = (new DAO\RdvDao)->getPraticiensRdvByPatient($_SESSION["id"]);
 
-    $rep = "";
-  
-        foreach ($rdv as $row) {
-            
-            $heure = date_create($row['date_heure'])->format('H:i');
-            $date = date_create($row['date_heure'])->format('d/m/Y');
-
-            // $rep .= $row["nom"];
-
-            $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th>
-                    <td>" .$row["prenom"]." ". $row["nom"];
-            $rep .= "</td><td>" . $row["activite"];
-            $rep .= "</td><td>" . $date;
-            $rep .= "</td><td>" . $heure;
-            $rep .= "</td><td>" . $row["type"];
-            "</td></tr>";
-        }
-    
-    return $rep;
-}

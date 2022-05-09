@@ -1,6 +1,6 @@
 <?php
 
-namespace DAO{
+namespace DAO {
 
     require_once "bd.dao.php";
     require_once "bd.connect.php";
@@ -8,14 +8,28 @@ namespace DAO{
     use DAO\DAO;
     use DBConnexion\Connexion;
 
- 
-    class RdvDao extends DAO{
 
-    
+    class RdvDao extends DAO
+    {
+
+        protected $id;
+
+        protected $nomPatient;
+        protected $prenomPatient;
+
+        protected $nomPraticien;
+        protected $prenomPraticien;       
+        protected $activite;
+
+        protected $dateRdv;
+        protected $heureRdv;
+        protected $pec;
+
+
 
         function __construct()
         {
-			parent::__construct("id", "rdv");
+            parent::__construct("id", "rdv");
         }
 
 
@@ -34,8 +48,8 @@ namespace DAO{
             // $email = $row["email"];
             // $activite = $row["activité"];
             // $rpps = $row["rpps"];
-            
-            
+
+
             // $rep = new \User\Praticien($nom, $prenom, $email, $activite, $rpps);
             // $rep->setNom($nom);
             // return $rep;
@@ -50,7 +64,7 @@ namespace DAO{
             // $email = $objet->getEmail();   
             // $activite = $objet->getActivite();
             // $rpps= $objet->getRpps();       
-          
+
             // $stmt->bindParam(':nom', $nom);
             // $stmt->bindParam(':prenom', $prenom);
             // $stmt->bindParam(':email', $email);
@@ -62,12 +76,11 @@ namespace DAO{
 
         public function delete($id)
         {
-			
-			$sql = "DELETE FROM rdv WHERE $this->key=:id";
+
+            $sql = "DELETE FROM rdv WHERE $this->key=:id";
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $stmt->bindParam(':id', $id);
-            $stmt->execute();  
-  			
+            $stmt->execute();
         }
 
         public function create($objet)
@@ -91,47 +104,19 @@ namespace DAO{
         }
 
 
-       public function getRdvByPraticien($idPraticien) {
-
-        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_praticien=$idPraticien";
-        $rep = "";	
-        $rows = Connexion::connexionPDO()->query($req);
-
-        foreach ($rows as $row) {   
-
-            $heure=date_create($row['date_heure'])->format('H:i');
-
-            $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $heure;
-            $rep .= "</td><td>" . $row["prenom"]." ". $row["nom"];
-            $rep .= "</td><td>" . $row["type"];        
-            "</td></tr>";                
+        public function getRdvByPraticien($idPraticien)
+        {
+            $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_praticien=$idPraticien";
+            $rows = Connexion::connexionPDO()->query($req);
+            return $rows;
         }
-    return $rep;
-}
 
-    public function getRdvByPatient($idPatient) {
-
-        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec JOIN praticien ON praticien.id=rdv.id_praticien WHERE id_patient=$idPatient";
-        $rows = Connexion::connexionPDO()->query($req);        
-        
-        return $rows;
-    }
-
-    public function getPraticiensRdvByPatient($idPatient) {
-
-        $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN praticien ON praticien.id = rdv.id_praticien WHERE id_patient=$idPatient";
-        $row= Connexion::connexionPDO()->query($req);
-        // $stmt = Connexion::connexionPDO()->prepare($req);
-        // $stmt->execute();
-        // $row = $stmt->fetch();
-        // $nom = $row["nom"];
-        // $prenom = $row["prenom"];
-        // $activite = $row["activite"];
-
-        // $praticien = $prenom." ".$nom." - ".$activite;
-
-        return $row;
-    }
+        public function getRdvByPatient($idPatient)
+        {
+            $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec JOIN praticien ON praticien.id=rdv.id_praticien WHERE id_patient=$idPatient AND date_heure > DATE_SUB(NOW(), INTERVAL 1 DAY)";       
+            $rows = Connexion::connexionPDO()->query($req);
+            return $rows;
+        }
 
     }
 }
