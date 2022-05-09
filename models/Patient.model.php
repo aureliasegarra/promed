@@ -55,9 +55,9 @@ namespace Model {
         }
 
 
-                                                                    /* GETTERS ET SETTER*/
+                                                                    /* GETTERS ET SETTERS*/
 
-                                                                    
+
         public function getId()
         {
             return $this->id;
