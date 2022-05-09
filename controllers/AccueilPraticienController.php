@@ -21,11 +21,7 @@ if (isset($_GET["connect"])) {
 
 else if (isLoggedOnPraticien()) {
 
-    $tableRdv = (new DAO\RdvDao)->getRdvByPraticien($_SESSION["id"]);
- 
-    include VIEW_PATH . "/layout_praticien.php";
-    include VIEW_PATH . "/accueil_praticien.php";
-    include VIEW_PATH . "/footer.php";
+    displayPage();
 
 }
 
@@ -57,11 +53,8 @@ function loginPraticien($rpps, $mdp)
 
     if (isLoggedOnPraticien()) {
 
-        $tableRdv = getTable();
-     
-        include VIEW_PATH . "/layout_praticien.php";
-        include VIEW_PATH . "/accueil_praticien.php";
-        include VIEW_PATH . "/footer.php";
+        displayPage();
+
 
     } else {
         echo 'Erreur de login';
@@ -99,20 +92,15 @@ function logout()
 }
 
 
-function getTable()
-{
-    $rdv = (new DAO\RdvDao)->getRdvByPraticien($_SESSION["id"]);
-    $rep = "";
 
-    foreach ($rdv as $row) {
 
-        $heure = date_create($row['date_heure'])->format('H:i');
-
-        $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $heure;
-        $rep .= "</td><td>" . $row["prenom"] . " " . $row["nom"];
-        $rep .= "</td><td>" . $row["type"];
-        "</td></tr>";
-    }
-    
-    return $rep;
+function displayPage(){
+    $user = (new DAO\PraticienDao());
+    $praticien = $user->read($_SESSION['id']);
+    $table = $user->getTable();
+    // $tableRdv = getTable();
+ 
+    include VIEW_PATH . "/layout_praticien.php";
+    include VIEW_PATH . "/accueil_praticien.php";
+    include VIEW_PATH . "/footer.php";
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace DAO{
+namespace DAO {
 
     require_once "bd.dao.php";
     require_once "bd.connect.php";
@@ -8,14 +8,15 @@ namespace DAO{
     use DAO\DAO;
     use DBConnexion\Connexion;
 
- 
-    class PraticienDao extends DAO{
 
-    
+    class PraticienDao extends DAO
+    {
+
+
 
         function __construct()
         {
-			parent::__construct("id", "praticien");
+            parent::__construct("id", "praticien");
         }
 
 
@@ -26,19 +27,19 @@ namespace DAO{
             $stmt->bindParam(':id', $id);
             $stmt->execute();
 
-            $row = $stmt->fetch();
+            return $stmt->fetch();
 
-            $id = $row["id"];
-            $nom = $row["nom"];
-            $prenom = $row["prenom"];
-            $email = $row["email"];
-            $activite = $row["activité"];
-            $rpps = $row["rpps"];
-            
-            
-            $rep = new \Model\Praticien($nom, $prenom, $email, $activite, $rpps);
-            $rep->setNom($nom);
-            return $rep;
+            // $id = $row["id"];
+            // $nom = $row["nom"];
+            // $prenom = $row["prenom"];
+            // $email = $row["email"];
+            // $activite = $row["activité"];
+            // $rpps = $row["rpps"];
+
+
+            // $rep = new \Model\Praticien($nom, $prenom, $email, $activite, $rpps);
+            // $rep->setNom($nom);
+            // return $rep;
         }
 
         public function update($objet)
@@ -47,10 +48,10 @@ namespace DAO{
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $nom = $objet->getNom();
             $prenom = $objet->getPrenom();
-            $email = $objet->getEmail();   
+            $email = $objet->getEmail();
             $activite = $objet->getActivite();
-            $rpps= $objet->getRpps();       
-          
+            $rpps = $objet->getRpps();
+
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
             $stmt->bindParam(':email', $email);
@@ -62,22 +63,22 @@ namespace DAO{
 
         public function delete($id)
         {
-			
-			$sql = "DELETE FROM praticien WHERE $this->key=:id";
+
+            $sql = "DELETE FROM praticien WHERE $this->key=:id";
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $stmt->bindParam(':id', $id);
-            $stmt->execute();  
+            $stmt->execute();
 
-              
-			
-			//  retour de l'erreur SQL
-			//
-			//  if($stmt->errorCode() > 0) {
-			// 		$errors = $stmt->errorInfo();
-			// 		die($errors[2]);
-			//  }
-			
-			
+
+
+            //  retour de l'erreur SQL
+            //
+            //  if($stmt->errorCode() > 0) {
+            // 		$errors = $stmt->errorInfo();
+            // 		die($errors[2]);
+            //  }
+
+
         }
 
         public function create($objet)
@@ -88,7 +89,7 @@ namespace DAO{
             $prenom = $objet->getPrenom();
             $email = $objet->getEmail();
             $activite = $objet->getActivite();
-            $rpps= $objet->getRpps();   
+            $rpps = $objet->getRpps();
 
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
@@ -101,7 +102,7 @@ namespace DAO{
         }
 
         // static function getPraticiens() {
-        
+
         //         $req = "select * from praticien";
         //         $rep = "<table class=\"table table-striped\">";	
         //         $rows = Connexion::connexionPDO()->query($req);
@@ -113,31 +114,54 @@ namespace DAO{
         //             $rep .= "</td><td>" . $row["activite"];
         //             $rep .= "</td><td>" . $row["rpps"];
         //          "</td></tr>";
-                   
+
         //         }
-        
+
         //     return $rep;
         // }
 
-       public function getPraticienByRpps($identifiant) {
+        public function getPraticienByRpps($identifiant)
+        {
 
             try {
                 $cnx = Connexion::connexionPDO();
                 $req = $cnx->prepare("select * from praticien where rpps=:rpps");
                 $req->bindValue(':rpps', $identifiant, \PDO::PARAM_STR);
                 $req->execute();
-                
+
                 $resultat = $req->fetch(\PDO::FETCH_ASSOC);
             } catch (\PDOException $e) {
                 print "Erreur !: " . $e->getMessage();
                 die();
             }
             return $resultat;
-            }
+        }
 
+
+        public function getTable()
+        {
+
+            $rdv = (new \DAO\RdvDao)->getRdvByPraticien($_SESSION["id"]);
+            $rep = "";
+            if ($rdv != null) {
+                foreach ($rdv as $row) {
+
+                    $heure = date_create($row->date_heure)->format('H:i');
+                    $date = date_create($row->date_heure)->format('d/m/Y');         
+
+
+                    $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $date;
+                    $rep .= "</td><td>" . $heure;
+                    $rep .= "</td><td>" . $row->prenom . " " . $row->nom;
+                    $rep .= "</td><td>" . $row->type;
+                    "</td></tr>";
+                }
+            } 
+            else {
+                $rep =  "<td>Pas de rendez vous ce jour</td>";
+               
+            }
+            return $rep;
+        }
     }
 }
-
-
-
-

@@ -64,15 +64,18 @@
                     <script>
 
                         function addTextCancel() {
-                            let a = document.querySelector('.selected')
+
+                            line= document.querySelector('.selected')
                             
-                            a.append('Annulé')
+                            line.append('Annulé')
 
                         }
                         button = document.getElementById("buttonCancel");
+
                         button.onclick = function() {
                             addTextCancel()
                         };
+
                     </script>
 
                 </div>

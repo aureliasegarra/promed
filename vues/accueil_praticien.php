@@ -13,8 +13,8 @@ $heurefr = date("H:i", strtotime($heure));
             <div class="container">
                 <div class="row mt-3">
                     <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
-                        <h2><?php echo "Bienvenue" . " " . $_SESSION["nomPrenom"]; ?></h2>
-                        <h4>Mon activité : <span> <?=$_SESSION["activite"] ?></span></h4>
+                        <h2><?php echo "Bienvenue" . " " . $praticien->prenom." ".$praticien->nom; ?></h2>
+                        <h4>Mon activité : <span> <?=$praticien->activite ?></span></h4>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
                         <h2><?php echo date('d/m/y'); ?></h2>
@@ -29,13 +29,14 @@ $heurefr = date("H:i", strtotime($heure));
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col"></th>
-                            <th scope="col">RDV</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Heure</th>
                             <th scope="col">Patients</th>
                             <th scope="col">Prise en charge</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?= $tableRdv; ?>
+                        <?= $table; ?>
                     </tbody>
                 </table>
             </div>

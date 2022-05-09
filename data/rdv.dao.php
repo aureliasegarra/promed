@@ -106,14 +106,14 @@ namespace DAO {
 
         public function getRdvByPraticien($idPraticien)
         {
-            $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_praticien=$idPraticien";
+            $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec WHERE id_praticien=$idPraticien AND date_heure BETWEEN DATE_SUB(NOW(), INTERVAL '12' HOUR) AND DATE_ADD(NOW(), INTERVAL '1' DAY) ORDER BY date_heure";
             $rows = Connexion::connexionPDO()->query($req);
             return $rows;
         }
 
         public function getRdvByPatient($idPatient)
         {
-            $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec JOIN praticien ON praticien.id=rdv.id_praticien WHERE id_patient=$idPatient AND date_heure > DATE_SUB(NOW(), INTERVAL 1 DAY)";       
+            $req = "SELECT * FROM rdv JOIN patient ON rdv.id_patient=patient.id JOIN prise_en_charge ON prise_en_charge.id = rdv.id_pec JOIN praticien ON praticien.id=rdv.id_praticien WHERE id_patient=$idPatient AND date_heure > DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY date_heure ";       
             $rows = Connexion::connexionPDO()->query($req);
             return $rows;
         }
