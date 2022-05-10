@@ -212,5 +212,15 @@ nav{
     border-top:.1rem solid #777777;
 }
 
+#avatar{
+    max-width: 20%;
+}
+
+.selected{
+    
+    background-color: lightblue; 
+    font-weight: bold; 
+    color: #fff;
+}
 
 

@@ -1,24 +1,27 @@
 <?php
 
+require_once PATIENT;
+
+/* chargement des vues de la page*/
+
 include VIEW_PATH . "/layout_praticien.php";
 include VIEW_PATH . "/nouvelle_fiche_patient.php";
-?>
-<?php
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-  if($check !== false) {
-    echo "File is an image - " . $check["mime"] . ".";
-    $uploadOk = 1;
-  } else {
-    echo "File is not an image.";
-    $uploadOk = 0;
-  }
+include VIEW_PATH . "/footer.php";
+
+/* verifie si il y a save dans l'url*/
+
+if (isset($_GET["save"])) {
+
+    /* verifie si il existe un POST email et un POST password non nuls*/
+
+    if (isset($_POST['email']) && isset($_POST['password']) && $_POST['email'] != null & $_POST['password'] != null) {
+
+        /* creation d'un nouveau patient avec les données du formulaire*/
+
+        $newPatient = (new Model\Patient)->Patient(($_POST['nom']), ($_POST['prenom']), ($_POST['email']), ($_POST['activite']), ($_POST['numSecu']), ($_POST['mutuelle']), ($_POST['caisse']), ($_POST['nomTuteur']), ($_POST['dateNaissance']), ($_POST['telephone']), ($_POST['sexe']), ($_POST['password']));
+
+        /* enregistrement du nouveau patient dans la base de données*/
+
+        $newPatient->create($newPatient);
+    }
 }
-?>
-
-
