@@ -1,41 +1,39 @@
 <?php
-use DAO\RdvDao;
-use DBConnexion\Connexion;
 
-require_once PRATICIEN_DAO;
+require_once PRATICIEN;
 
-include VIEW_PATH . "/layout_accueil.php";
+/* Chargement des vues */
+include VIEW_PATH . "/layout_praticien.php";
 include VIEW_PATH . "/inscription.php";
+include VIEW_PATH . "/footer.php";
 
+/* Vérification si il y a un save dans l'url */
+if (isset($_GET["save"])) {
 
-class InscriptionController {
+    /* Vérification si le formulaire d'inscription a été lancé via son bouton "register_btn" */
+    if(isset($_POST['register_btn'])){
+        
+        /* Vérification si il y a des champs vides */
+        if (isset($_POST['nom'])  && 
+            isset($_POST['prenom']) && 
+            isset($_POST['email']) && 
+            isset($_POST['rpps']) && 
+            isset($_POST['activite']) && 
+            isset($_POST['mot_de_passe']) != null) {
+            
+            /* Création d'un nouveau praticien */
+            $newPraticien = (new Model\Praticien)->Praticien(($_POST['nom']), 
+                                                            ($_POST['prenom']), 
+                                                            ($_POST['email']), 
+                                                            ($_POST['rpps']), 
+                                                            ($_POST['activite']), 
+                                                            ($_POST['mot_de_passe']));
 
-    public function __construct()
-    {
-        $db = new Connexion();
-        $this->conn = $db->conn;
-    }
-
-    // Enregistrement d'un nouvel utilisateur en base de données
-    public function registration($nom, $prenom, $email, $rpps, $activite, $mot_de_passe)
-    {
-        $register_query = "INSERT INTO praticien (nom, prenom, email, activite, mot_de_passe) VALUES ('$nom', '$prenom', '$email', '$activite', '$mot_de_passe')";
-        $result = $this->conn->query($register_query);
-        return $result;
-    }
-
-    // Vérification si l'utilisateur n'existe pas déjà 
-    public function isUserExists($email)
-    {
-        $checkUser = "SELECT email FROM praticien WHERE email='$email' LIMIT 1";
-        $result = $this->conn->query($checkUser);
-        if ($result->num_rows > 0) {
-            return true;
-        } else {
-            return false;
-        }
+            /* Enregistrement du nouveau patient en BDD */
+            $newPraticien->create($newPraticien);
+        } 
+    
     }
 
 }
-
 

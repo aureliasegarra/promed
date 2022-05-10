@@ -6,6 +6,7 @@ function controleurPrincipal($action)
 {
     $lesActions = array();
     $lesActions["home"] = "HomeController.php";  
+    $lesActions["connect"] = "InscriptionController.php";  
     $lesActions["inscription"] = "InscriptionController.php";
     $lesActions["accesPraticien"] = "PraticienController.php";
     $lesActions["accesPatient"] = "PatientController.php";

@@ -1,6 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<body> -->
 
 <div class="main-wrapper">
     <section class="connexion">
@@ -16,7 +13,7 @@
             </div>
     </section>
     <section class="container">
-        <form action="../controllers/InscriptionController.php" method="POST"  class="form-wrapper">
+        <form action="./?action=inscription&save" method="POST"  class="form-wrapper">
             <div class="mb-3">
                 <label class="form-label">Nom</label>
                 <input type="text" name="nom" class="form-control"  aria-describedby="emailHelp" placeholder="Entrez votre nom">
@@ -73,6 +70,3 @@
     </section>
 </div>
 
-
-<!-- </body>
-</html> -->

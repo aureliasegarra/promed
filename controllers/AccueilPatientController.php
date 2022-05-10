@@ -11,6 +11,7 @@ require_once RDV;
 
 logout();
 
+echo "page patient";
 
 
 /* verifie si il existe un POST identifiant et un POST password */
@@ -26,6 +27,8 @@ if (isset($_POST["identifiant"]) && isset($_POST["mot_de_passe_patient"])) {
     /* appel de la fonction loginPAtient avec les variables en parametres*/
 
     loginPatient($identifiant, $mdp);
+} else {
+    echo "Connection";
 }
 
 
@@ -55,6 +58,9 @@ function loginPatient($mail, $mdp)
         $_SESSION["identifiant"] = $mail;
         $_SESSION["mot_de_passe"] = $mdpBD;
         $_SESSION['id'] = $id;
+    }
+    else {
+        echo "mdp";
     }
 
     /* appel de la fonction qui verifie si le patient est bien connecte */
@@ -138,4 +144,5 @@ function displayPage()
     include_once VIEW_PATH . "/layout_patient.php";
     include_once VIEW_PATH . "/accueil_patient.php";
     include_once VIEW_PATH . "/footer.php";
-}
+    echo "displayPage";
+} 

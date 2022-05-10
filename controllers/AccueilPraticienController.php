@@ -93,7 +93,7 @@ function isLoggedOnPraticien()
     if (!isset($_SESSION)) {
         session_start();
     }
-    $ret = false;
+    $rep = false;
 
     /* verifie si la variable de session 'identifiant' existe*/
 
@@ -106,6 +106,8 @@ function isLoggedOnPraticien()
             $praticien["rpps"] == $_SESSION["identifiant"] && $praticien["mot_de_passe"] == $_SESSION["mot_de_passe"]
         ) {
             $rep = true;
+        } else {
+            echo "Nope";
         }
     }
     return $rep;
