@@ -1,17 +1,24 @@
 <?php
 
+/* definie cet emplacement comme étant a la racine de l'application*/
+
 define("ROOT",__DIR__);
 define("GETRACINE",__FILE__);
 
-define("CONTROLLER_PATH", ROOT. "/controllers");
-define("MODEL_PATH", ROOT. "/models");
-define("VIEW_PATH", ROOT. "/vues");
-define("DATA_PATH", ROOT. "/data");
+/* definie des constantes indiquant le chemin du dossier controller , vues et models*/
 
-define("BD_CONNECT", DATA_PATH.'/bd.connect.php');
-define("PATIENT_DAO", DATA_PATH.'/patient.dao.php');
-define("PRATICIEN_DAO", DATA_PATH.'/praticien.dao.php');
-define("RDVDAO", DATA_PATH.'/rdv.dao.php');
+define("CONTROLLER_PATH", ROOT. "/controllers");
+define("VIEW_PATH", ROOT. "/vues");
+define("MODEL_PATH", ROOT. "/models");
+
+/* definie des constantes indiquant le chemin des principales classes*/
+
+define("BD_CONNECT", MODEL_PATH.'/bdconnect.model.php');
+define("PATIENT", MODEL_PATH.'/patient.model.php');
+define("PRATICIEN", MODEL_PATH.'/praticien.model.php');
+define("RDV", MODEL_PATH.'/rdv.model.php');
+
+/* definie des constantes indiquant le chemin des controllers */
 
 define("CONNECTION_CONTROLLER", CONTROLLER_PATH.'/ConnectionController.php');
 define("MAIN_CONTROLLER", CONTROLLER_PATH."/MainController.php");
