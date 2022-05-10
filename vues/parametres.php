@@ -17,35 +17,35 @@
                         <div class="col mb-5">
                             <div class="mb-3">
                                 <label class="form-label">NOM :</label>
-                                <input type="text" class="form-control" placeholder="Entrez votre nom">
+                                <input type="text" class="form-control" placeholder="<?=$data['nom']?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">PRENOM :</label>
-                                <input type="text" class="form-control" placeholder="Entrez votre prénom">
+                                <input type="text" class="form-control" placeholder="<?=$data['prenom']?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">ACTIVITE :</label>
-                                <input type="text" class="form-control" placeholder="Entrez votre activité">
+                                <input type="text" class="form-control" placeholder="<?=$data['activite']?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">ADRESSE :</label>
-                                <input type="text" class="form-control" placeholder="Entrez votre adresse">
+                                <input type="text" class="form-control" placeholder="<?=$data['voie']?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">CODE POSTAL :</label>
-                                <input type="text" class="form-control" placeholder="Entrez votre code postal">
+                                <input type="text" class="form-control" placeholder="<?=$data['code_postal']?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">VILLE :</label>
-                                <input type="email" class="form-control" placeholder="Entrez votre ville">
+                                <input type="email" class="form-control" placeholder="<?=$data['ville']?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">EMAIL :</label>
-                                <input type="mail" class="form-control" placeholder="Entrez votre Email">
+                                <input type="mail" class="form-control" placeholder="<?=$data['email']?>">
                             </div>
                             <div class="mb-5">
                                 <label class="form-label">N° RPPS :</label>
-                                <input type="password" class="form-control" placeholder="Entrez votre N° Adélie">
+                                <input type="password" class="form-control" placeholder="<?=$data['rpps']?>">
                             </div>
                             <div class="mb-5">
                                 <input type="password" class="form-control mb-2" placeholder="Ancien mot de passe">
