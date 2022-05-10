@@ -1,3 +1,7 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<body> -->
+
 <div class="main-wrapper">
     <section class="connexion">
             <div class="container">
@@ -12,37 +16,33 @@
             </div>
     </section>
     <section class="container">
-        <form action="./?action=inscription" method="POST"  class="form-wrapper">
+        <form action="../controllers/InscriptionController.php" method="POST"  class="form-wrapper">
             <div class="mb-3">
                 <label class="form-label">Nom</label>
-                <input type="text" name="nom" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre nom">
+                <input type="text" name="nom" class="form-control"  aria-describedby="emailHelp" placeholder="Entrez votre nom">
             </div>
             <div class="mb-3">
                 <label class="form-label">Prénom</label>
-                <input type="text" name="prenom" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre prénom">
+                <input type="text" name="prenom" class="form-control"  aria-describedby="emailHelp" placeholder="Entrez votre prénom">
             </div>
             <div class="mb-3">
                 <label class="form-label">Activité</label>
-                <input type="text" name="activite" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre activité">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Adresse</label>
-                <input type="text" name="adresse" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse">
+                <input type="text" name="activite" class="form-control"  aria-describedby="emailHelp" placeholder="Entrez votre activité">
             </div>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre email">
+                <input type="email" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="Votre email">
             </div>
             <div class="mb-3">
                 <label class="form-label">N° RPPS</label>
-                <input type="text" name="rpps" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Renseignez votre n° RPPS">
+                <input type="text" name="rpps" class="form-control"  aria-describedby="emailHelp" placeholder="Renseignez votre n° RPPS">
             </div>
             <div class="mb-3">
                 <label class="form-label">Mot de passe</label>
-                <input type="password" name="mot_de_passe" class="form-control" id="exampleInputPassword1" placeholder="Votre mot de passe">
+                <input type="password" name="mot_de_passe" class="form-control"  placeholder="Votre mot de passe">
             </div>
             
-            <button type="submit" name="submit" class="btn btn-primary">S'enregistrer</button>
+            <button type="submit" name="register_btn" class="btn btn-primary">S'enregistrer</button>
         </form>
     </section>
     
@@ -74,3 +74,5 @@
 </div>
 
 
+<!-- </body>
+</html> -->

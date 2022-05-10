@@ -6,6 +6,7 @@ require_once BD_CONNECT;
 require_once PATIENT_DAO;
 require_once PRATICIEN_DAO;
 require_once RDVDAO;
+include_once('controllers/InscriptionController.php');
 
 
 logout();
@@ -21,6 +22,30 @@ if (isset($_POST["rpps"]) && isset($_POST["mot_de_passe_praticien"]))  {
     $identifiant = $_POST["rpps"];
     $mdp = $_POST["mot_de_passe_praticien"];
     loginPraticien($identifiant, $mdp);
+}
+
+
+if (isset($_POST['register_btn'])) {
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $rpps = $_POST['rpps'];
+    $activite = $_POST['activite'];
+    $mdp = $_POST['mot_de_passe'];
+
+    $register= new InscriptionController;
+    $result_user = $register->isUserExists($email);
+    if ($result_user) {
+        echo "Already Email exists";
+        header("Location : inscription.php");
+    } else {
+        $register_query = $register->registration($nom, $prenom, $email, $rpps, $activite, $mdp);
+        if ($register_query) {
+            header("Location : acces_praticien.php");
+        } else {
+            header("Location : inscription.php");
+        }
+    }
 }
 
 
