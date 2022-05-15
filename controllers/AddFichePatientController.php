@@ -1,6 +1,9 @@
 <?php
 
+session_start();
+
 require_once PATIENT;
+require_once RDV;
 
 /* chargement des vues de la page*/
 
@@ -23,5 +26,19 @@ if (isset($_GET["save"])) {
         /* enregistrement du nouveau patient dans la base de données*/
 
         $newPatient->create($newPatient);
+
+
+        if (isset($_POST['rdvDate'])!=null && isset($_POST['rdvHeure'])!=null ) {
+
+            echo $_POST['rdvDate'];
+            echo $_POST['rdvHeure'];
+            $test= $_POST['rdvDate']." ".$_POST['rdvHeure'];
+
+            $newRdv = (new Model\Rdv)->Rdv($_SESSION['id'], 1, 2, $test, 1);
+
+            $newRdv->create($newRdv);
+
+            var_dump($newRdv);
+        }
     }
 }

@@ -142,7 +142,7 @@ namespace Model{
 
             $rdv = (new \Model\Rdv)->getRdvByPraticien($_SESSION["id"]);
             $rep = "";
-            if ($rdv != null) {
+            
                 foreach ($rdv as $row) {
 
                     $heure = date_create($row->date_heure)->format('H:i');
@@ -154,12 +154,8 @@ namespace Model{
                     $rep .= "</td><td>" . $row->prenom . " " . $row->nom;
                     $rep .= "</td><td>" . $row->type;
                     "</td></tr>";
-                }
-            } 
-            else {
-                $rep =  "<td>Pas de rendez vous ce jour</td>";
-               
-            }
+           
+                 }
             return $rep;
         }
     }

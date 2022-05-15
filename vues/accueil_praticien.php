@@ -16,7 +16,7 @@ $heurefr = date("H:i", strtotime($heure));
                         <h2><?php echo "Bienvenue" . " " . $praticien->prenom." ".$praticien->nom; ?></h2>
                         <h4>Mon activité : <span> <?=$praticien->activite ?></span></h4>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5">
+                    <div class="col-md-6 col-lg-6 col-xs-12-col-sm-10 pt-5 pb-5" id='heure'>
                         <h2><?php echo date('d/m/y'); ?></h2>
                         <h4><?= $heurefr ?></h4>
                     </div>

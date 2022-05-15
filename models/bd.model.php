@@ -25,8 +25,7 @@ namespace Model {
             $this->table = $table;
         }
 
-        function getLastKey()      
-         
+        function getLastKey()         
         {
             return Connexion::connexionPDO()->lastInsertId();
         }

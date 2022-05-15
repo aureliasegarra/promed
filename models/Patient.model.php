@@ -332,26 +332,28 @@ namespace Model {
 
             $rdv = (new \Model\Rdv)->getRdvByPatient($_SESSION["id"]);
             $rep = "";
+            if ($rdv!=null){
+                foreach ($rdv as $row) {
 
-            foreach ($rdv as $row) {
+                    $heure = date_create($row->date_heure)->format('H:i');
+                    $date = date_create($row->date_heure)->format('d/m/Y');
 
-                $heure = date_create($row->date_heure)->format('H:i');
-                $date = date_create($row->date_heure)->format('d/m/Y');
-
-                $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th>
-							<td>" . $row->prenom . " " . $row->nom;
-                $rep .= "</td><td>" . $row->activite;
-                $rep .= "</td><td>" . $date;
-                $rep .= "</td><td>" . $heure;
-                $rep .= "</td><td>" . $row->type;
-                "</td></tr>";
+                    $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th>
+                                <td>" . $row->prenom . " " . $row->nom;
+                    $rep .= "</td><td>" . $row->activite;
+                    $rep .= "</td><td>" . $date;
+                    $rep .= "</td><td>" . $heure;
+                    $rep .= "</td><td>" . $row->type;
+                    "</td></tr>";
+                }
             }
-
+            else {
+                $rep="Pas de rendez vous";
+            }
             return $rep;
-        }
 
-
-
+            }   
 
     }
+
 }

@@ -19,36 +19,38 @@
                     <div class="col">
                         <label class="form-label">PHOTO DU PATIENT</label>
                         <div class="mb-3">
-                            <img src="../static/images/patient.png" class="photo_patient" alt="avatar patient">
+                            <img src="./static/images/patient.png" class="photo_patient" alt="avatar patient">
                         </div>
                         <button type="button" class="btn btn-secondary mb-5">Ajouter</button>
-
-                        <!-- <div>
+                        <div>
                             <label class="form-label">RENDEZ VOUS</label>
-                            <input type="date" class="form-control mb-5">
+                            <input name="rdvDate" type="date" class="form-control mb-5">
+                            <input name="rdvHeure" type="time" class="form-control mb-5">
+
                         </div>
 
                         <label class="form-label">TYPE DE PRISE EN CHARGE</label>
-                        <select class="form-select form-control mb-5" aria-label="Default select example">
+                        <select name="typeRdv" class="form-select form-control mb-5" aria-label="Default select example">
                             <option selected>Sélectionnez...</option>
                             <option value="1">Consultation</option>
                             <option value="2">Suivi</option>
                         </select>
                         <div class="row mb-3">
-                            <label class="form-label ml-3 mr-2 mt-1">PRIX :</label>
-                            <input type="text" placeholder="Eur" class="mr-2">
-                            <label class="form-label ml-3 mr-2 mt-1">REGLE</label> <input type="checkbox" class="mr-2 mt-2">
-                        </div> -->
+                            <!-- <label class="form-label ml-3 mr-2 mt-1">PRIX :</label>
+                            <input type="text" placeholder="Eur" class="mr-2"> -->
+                            <label class="form-label ml-3 mr-2 mt-1">REGLE</label> 
+                            <input name="paiement" type="checkbox" class="mr-2 mt-2">
+                        </div> 
 
                     </div>
-                    <div class="col-10">
+                    <div class="col mb-5">
                         <div class="mb-3">
                             <label class="form-label">NOM</label>
-                            <input name="nom" type="text" class="form-control" placeholder="Entrez le nom du patient">
+                            <input name="nom" type="text" class="form-control" placeholder="Entrez le nom du patient" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">PRENOM</label>
-                            <input name="prenom" type="text" class="form-control" placeholder="Entrez le prénom du patient">
+                            <input name="prenom" type="text" class="form-control" placeholder="Entrez le prénom du patient" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">ACTIVITE</label>
@@ -60,11 +62,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">EMAIL</label>
-                            <input name='email' type="email" class="form-control" placeholder="Entrez le mail du patient">
+                            <input name='email' type="email" class="form-control" placeholder="Entrez le mail du patient" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">TELEPHONE</label>
-                            <input name='telephone' type="tel" class="form-control" placeholder="Entrez le numero de telephone du patient">
+                            <input name='telephone' type="tel" class="form-control" placeholder="Entrez le numero de telephone du patient" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">N°SECURITE SOCIALE</label>
@@ -92,7 +94,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">MOT DE PASSE</label>
-                            <input name='password' type="password" class="form-control" placeholder="Entrer le mot de passe du patient">
+                            <input name='password' type="password" class="form-control" placeholder="Entrer le mot de passe du patient" required>
                         </div>
                     </div>
                 </div>

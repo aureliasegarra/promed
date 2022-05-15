@@ -13,25 +13,51 @@ namespace Model {
     {
 
         protected $id;
-
-        protected $nomPatient;
-        protected $prenomPatient;
-
-        protected $nomPraticien;
-        protected $prenomPraticien;       
-        protected $activite;
-
-        protected $dateRdv;
-        protected $heureRdv;
-        protected $pec;
-
-
+        protected $idPraticien;
+        protected $idPatient;
+        protected $idPec;
+        protected $dateHeure;
+        protected $paiement;
 
         function __construct()
         {
             parent::__construct("id", "rdv");
         }
 
+
+        public function getIdPraticien(){
+            return $this->idPraticien;
+        }
+
+        public function getIdPatient(){
+            return $this->idPatient;
+        }
+        
+        public function getIdPec(){
+            return $this->idPec;
+        }
+        
+        public function getDateHeure(){
+            return $this->dateHeure;
+        }
+
+        public function getPaiement(){
+            return $this->paiement;
+        }
+        
+
+
+
+        public function rdv ($idPraticien, $idPatient, $idPec, $dateHeure,$paiement){
+
+            $this->idPraticien = $idPraticien;
+            $this->idPatient = $idPatient;
+            $this->idPec = $idPec;
+            $this->dateHeure = $dateHeure;
+            $this->paiement = $paiement;     
+
+            return $this;
+        }
 
         public function read($id)
         {
@@ -44,17 +70,6 @@ namespace Model {
 
             $row = $stmt->fetch();
 
-            // $id = $row["id"];
-            // $nom = $row["nom"];
-            // $prenom = $row["prenom"];
-            // $email = $row["email"];
-            // $activite = $row["activité"];
-            // $rpps = $row["rpps"];
-
-
-            // $rep = new \User\Praticien($nom, $prenom, $email, $activite, $rpps);
-            // $rep->setNom($nom);
-            // return $rep;
         }
 
         public function update($objet)
@@ -78,7 +93,6 @@ namespace Model {
 
         public function delete($id)
         {
-
             $sql = "DELETE 
                     FROM rdv 
                     WHERE $this->key=:id";
@@ -89,22 +103,21 @@ namespace Model {
 
         public function create($objet)
         {
-            // $sql = "INSERT INTO praticien (nom,prenom,email,activite,rpps) VALUES (:nom, :prenom, :email, :activite, :rpps)";
-            // $stmt = Connexion::connexionPDO()->prepare($sql);
-            // $nom = $objet->getNom();
-            // $prenom = $objet->getPrenom();
-            // $email = $objet->getEmail();
-            // $activite = $objet->getActivite();
-            // $rpps= $objet->getRpps();   
+            $sql = "INSERT INTO rdv (id_praticien,id_patient,id_pec,date_heure,paiement) VALUES (:idPraticien, :idPatient, :idPec, :dateHeure, :paiement)";
+            $stmt = Connexion::connexionPDO()->prepare($sql);
+            $idPraticien = $objet->getIdPraticien();
+            $idPatient = $objet->getIdPatient();
+            $idPec = $objet->getIdPec();
+            $dateHeure = $objet->getDateHeure();
+            $paiement = $objet->getPaiement();   
 
-            // $stmt->bindParam(':nom', $nom);
-            // $stmt->bindParam(':prenom', $prenom);
-            // $stmt->bindParam(':email', $email);
-            // $stmt->bindParam(':activite', $activite);
-            // $stmt->bindParam(':rpps', $rpps);
+            $stmt->bindParam(':idPraticien', $idPraticien);
+            $stmt->bindParam(':idPatient', $idPatient);
+            $stmt->bindParam(':idPec', $idPec);
+            $stmt->bindParam(':dateHeure', $dateHeure);
+            $stmt->bindParam(':paiement', $paiement);
 
-            // $stmt->execute();
-            // $objet->setNom(parent::getLastKey());
+            $stmt->execute();
         }
 
 
