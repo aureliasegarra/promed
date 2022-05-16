@@ -24,11 +24,11 @@
 ![Illustration pc](./static/images/promed_pc.JPG)
 
 ##  2. Description <a id="Description"> </a>
-Promed est un site web qui permet aux praticiens de s'insrire, de plannifier des rendez-vous pris par le client. Le client ne peut que consulter son rendez-vous. Le praticien valide ou annule le rendez-vous
+Promed est un site web qui permet aux praticiens de s'insrire, de plannifier des rendez-vous pris par le client. Le client ne peut que consulter ses rendez-vous.
 
 ## 3. Objectif <a id="Objectif"> </a>
 
-Il a pour objectif de nous faire pratiquer les langages de programmation qui a été abordé tout au long de la formation.
+Il a pour objectif de nous faire pratiquer les langages de programmation qui ont été abordés tout au long de la formation.
 
 ## 4. Langages <a id="Langages"> </a>
 
@@ -48,7 +48,7 @@ L'application est en cours de développement.
 
 ## 6. Contexte <a id="Contexte"> </a>
 
-La conception de ce projet nous permettra d'aboutir à un développement d'une application WEB.
+La conception de ce projet nous permettra d'aboutir au développement d'une application WEB.
 
 ## 7. Développeurs <a id="Developpeurs"> </a>
 
