@@ -35,8 +35,8 @@ l’application sera utilisée essentiellement par les stagiaires du Greta, elle
 
 ### MVP <a id="MVP"> </a>
 
- ##  <a id="En tant que stagiaire:"> </a>
- 
+ ##  En tant que stagiaire<a id="En tant que stagiaire:"> </a>
+
 - Pouvoir se connecter sur l'application
 - Pouvoir consulter la liste des entreprises
 - Pouvoir consulter la fiche d'une entreprise
@@ -45,7 +45,7 @@ l’application sera utilisée essentiellement par les stagiaires du Greta, elle
 - Pouvoir accéder à la liste des ressources
 - Pouvoir se déconnecter
 
-##  <a id="tant qu'admin:"> </a>
+##  En tant qu'admin<a id="tant qu'admin:"> </a>
 
 - pouvoir se connecter à l'application
 - Pouvoir consulter la liste des entreprises
