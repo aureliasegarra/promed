@@ -1,7 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<body> -->
 
 <div class="main-wrapper">
     <section class="connexion">
@@ -83,7 +79,3 @@
         </div>
     </section>
 
-
-    <!-- </body>
-
-</html> -->

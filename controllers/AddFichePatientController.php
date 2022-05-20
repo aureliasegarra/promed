@@ -30,15 +30,18 @@ if (isset($_GET["save"])) {
 
         if (isset($_POST['rdvDate'])!=null && isset($_POST['rdvHeure'])!=null ) {
 
-            echo $_POST['rdvDate'];
-            echo $_POST['rdvHeure'];
-            $test= $_POST['rdvDate']." ".$_POST['rdvHeure'];
+            $dateHeure= $_POST['rdvDate']." ".$_POST['rdvHeure'];
+            $idPraticien= $_SESSION['id'];
+            $idPatient= (new Model\Patient)->getLastKey();    
 
-            $newRdv = (new Model\Rdv)->Rdv($_SESSION['id'], 1, 2, $test, 1);
+
+
+            $newRdv = (new Model\Rdv)->Rdv($idPraticien, $idPatient, 2, $dateHeure, 1);
 
             $newRdv->create($newRdv);
 
             var_dump($newRdv);
         }
     }
+    
 }

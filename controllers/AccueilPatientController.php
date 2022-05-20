@@ -50,7 +50,7 @@ function loginPatient($mail, $mdp)
 
     /* si le mot de passe du formulaire correspond au mot de passe de la bd on les stock dans les variables de session */
 
-    if ($mdpBD == $mdp) {
+    if (password_verify($mdp, $mdpBD)) {
 
         $_SESSION["identifiant"] = $mail;
         $_SESSION["mot_de_passe"] = $mdpBD;

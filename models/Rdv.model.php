@@ -43,9 +43,7 @@ namespace Model {
 
         public function getPaiement(){
             return $this->paiement;
-        }
-        
-
+        }     
 
 
         public function rdv ($idPraticien, $idPatient, $idPec, $dateHeure,$paiement){

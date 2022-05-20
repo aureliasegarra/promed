@@ -1,7 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<body> -->
     <section class="py-5 services">
         <div class="container my-3">
             <p class="text-left text-white"></p>

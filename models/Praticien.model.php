@@ -12,6 +12,56 @@ namespace Model{
     class Praticien extends DAO
     {
 
+        protected $id;
+        protected $nom;
+        protected $prenom;
+        protected $email;
+        protected $rpps;
+        protected $activite;
+        protected $mot_de_passe;
+
+         /* Constrcteur Patient pour tester */
+         public function Praticien($nom, $prenom, $email, $rpps, $activite, $mot_de_passe)
+         {
+             $this->nom = $nom;
+             $this->prenom = $prenom;
+             $this->email = $email;
+             $this->rpps = $rpps;
+             $this->activite = $activite;
+             $this->mot_de_passe = $mot_de_passe;
+ 
+             return $this;
+         }
+ 
+         /* GETTERS & SETTERS */
+ 
+         public function getId(){
+                 return $this->id;
+         }
+ 
+         public function getNom(){
+             return $this->nom;
+         }
+ 
+         public function getPrenom(){
+             return $this->prenom;
+         }
+ 
+         public function getEmail(){
+             return $this->email;
+         }
+ 
+         public function getRpps(){
+             return $this->rpps;
+         }
+ 
+         public function getActivite(){
+             return $this->activite;
+         }
+ 
+         public function getMdp(){
+             return $this->mot_de_passe;
+         }
 
         function __construct()
         {
@@ -27,23 +77,12 @@ namespace Model{
             $stmt->execute();
 
             return $stmt->fetch();
-
-            // $id = $row["id"];
-            // $nom = $row["nom"];
-            // $prenom = $row["prenom"];
-            // $email = $row["email"];
-            // $activite = $row["activité"];
-            // $rpps = $row["rpps"];
-
-
-            // $rep = new \Model\Praticien($nom, $prenom, $email, $activite, $rpps);
-            // $rep->setNom($nom);
-            // return $rep;
+      
         }
 
         public function update($objet)
         {
-            $sql = "UPDATE praticien SET nom = :nom, prenom = :prenom, email = :email, activité= :activite, rpps=:rpps  WHERE $this->key=:id";
+            $sql = "UPDATE praticien SET nom = :nom, prenom = :prenom, email = :email, activite= :activite, rpps=:rpps  WHERE $this->key=:id";
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $nom = $objet->getNom();
             $prenom = $objet->getPrenom();
@@ -68,21 +107,11 @@ namespace Model{
             $stmt->bindParam(':id', $id);
             $stmt->execute();
 
-
-
-            //  retour de l'erreur SQL
-            //
-            //  if($stmt->errorCode() > 0) {
-            // 		$errors = $stmt->errorInfo();
-            // 		die($errors[2]);
-            //  }
-
-
         }
 
         public function create($objet)
         {
-            $sql = "INSERT INTO praticien (nom,prenom,email,activite,rpps) VALUES (:nom, :prenom, :email, :activite, :rpps)";
+            $sql = "INSERT INTO praticien (nom,prenom,email,activite,rpps,mot_de_passe) VALUES (:nom, :prenom, :email, :activite, :rpps, :mot_de_passe)";
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $nom = $objet->getNom();
             $prenom = $objet->getPrenom();
@@ -90,34 +119,21 @@ namespace Model{
             $activite = $objet->getActivite();
             $rpps = $objet->getRpps();
 
+            $password=$objet->getMdp();
+            $mot_de_passe = password_hash($password,PASSWORD_DEFAULT);
+
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':activite', $activite);
             $stmt->bindParam(':rpps', $rpps);
+            $stmt->bindParam(':mot_de_passe', $mot_de_passe);
 
             $stmt->execute();
             $objet->setNom(parent::getLastKey());
         }
 
-        // static function getPraticiens() {
 
-        //         $req = "select * from praticien";
-        //         $rep = "<table class=\"table table-striped\">";	
-        //         $rows = Connexion::connexionPDO()->query($req);
-
-        //         foreach ($rows as $row) {
-        //             $rep .= "<tr><td>" . $row["nom"];
-        //             $rep .= "</td><td>" . $row["prenom"];
-        //             $rep .= "</td><td>" . $row["email"];
-        //             $rep .= "</td><td>" . $row["activite"];
-        //             $rep .= "</td><td>" . $row["rpps"];
-        //          "</td></tr>";
-
-        //         }
-
-        //     return $rep;
-        // }
 
         public function getPraticienByRpps($identifiant)
         {

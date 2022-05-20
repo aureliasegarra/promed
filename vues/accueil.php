@@ -1,7 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
 
-<body> -->
     <div class="main-wrapper">
         <section class="slider">
             <div class="container">
@@ -50,6 +47,3 @@
                 </div>
             </div>
         </section>
-<!-- </body>
-
-</html> -->

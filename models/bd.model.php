@@ -5,7 +5,7 @@ namespace Model {
     use Model\Connexion;
 
     abstract class DAO
-    {        
+    {
 
         abstract function read($id);
 
@@ -25,7 +25,7 @@ namespace Model {
             $this->table = $table;
         }
 
-        function getLastKey()         
+        function getLastKey()
         {
             return Connexion::connexionPDO()->lastInsertId();
         }

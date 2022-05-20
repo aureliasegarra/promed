@@ -17,6 +17,8 @@ define("BD_CONNECT", MODEL_PATH.'/bdconnect.model.php');
 define("PATIENT", MODEL_PATH.'/patient.model.php');
 define("PRATICIEN", MODEL_PATH.'/praticien.model.php');
 define("RDV", MODEL_PATH.'/rdv.model.php');
+define("ADRESSE", MODEL_PATH.'/adresse.model.php');
+
 
 /* definie des constantes indiquant le chemin des controllers */
 

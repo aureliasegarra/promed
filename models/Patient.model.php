@@ -280,7 +280,9 @@ namespace Model {
             $nom_tuteur = $objet->getNomTuteur();
             $telephone = $objet->getTelephone();
             $sexe = $objet->getSexe();
-            $motdepasse = $objet->getMdp();
+
+            $password=$objet->getMdp();
+            $motdepasse = password_hash($password,PASSWORD_DEFAULT);
 
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);

@@ -1,0 +1,29 @@
+Connect Praticien
+
+	Pierre Tournesol:
+		->rpps = 56253
+		->mot de passe = 12345678
+
+	Jean Raoult:
+		->rpps = 23654
+		->mot de passe = motDePasseTest
+
+	Dodu Marc:
+		->rpps = 564325
+		->mot de psase = 87654321
+
+Connect Patient
+
+	Fabien Bignou:
+		->email = fabienBignou@test.com	
+		->mot de passe = 12345678
+
+	Ludovic Bleu:
+		->email = ludovicBleu@test.com
+		->mot de passe = motDePassePatient
+
+	Julie Codeur:
+		->email = julieCodeur@test.com
+		->mot de passe = 87654321
+
+	
