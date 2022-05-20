@@ -34,25 +34,26 @@ Cet outil est interne au GRETA de Vannes et n'a pas vocation à servir de platef
 l’application sera utilisée essentiellement par les stagiaires du Greta, elle pourra être également utilisée par l’ensemble du personnel administratif du Greta.
 
 ### MVP <a id="MVP"> </a>
-<u>En tant que stagiaire:</u>
+
+ ##  <a id="En tant que stagiaire:"> </a>
  
-<li>Pouvoir se connecter sur l'application</li>
-<li>Pouvoir consulter la liste des entreprises</li>
-<li>Pouvoir consulter la fiche d'une entreprise</li>
-<li>Pouvoir mettre en favoris une entreprise</li>
-<li>Pouvoir accéder à son profil utilisateur</li>
-<li>Pouvoir accéder à la liste des ressources</li>
-<li>Pouvoir se déconnecter</li>
+- Pouvoir se connecter sur l'application
+- Pouvoir consulter la liste des entreprises
+- Pouvoir consulter la fiche d'une entreprise
+- Pouvoir mettre en favoris une entreprise
+- Pouvoir accéder à son profil utilisateur
+- Pouvoir accéder à la liste des ressources
+- Pouvoir se déconnecter
 
-<p><u>En tant qu'admin:</u></p>
+##  <a id="tant qu'admin:"> </a>
 
-<li>pouvoir se connecter à l'application</li>
-<li>Pouvoir consulter la liste des entreprises</li>
-<li>Pouvoir consulter la fiche d'une entreprise</li>
-<li>Pouvoir ajouter une nouvelle fiche entreprise</li>
-<li>Pouvoir inscrire un stagiaire</li>
-<li>Pouvoir consulter la liste des ressources</li>
-<li>Pouvoir se déconnecter</li>
+- pouvoir se connecter à l'application
+- Pouvoir consulter la liste des entreprises
+- Pouvoir consulter la fiche d'une entreprise
+- Pouvoir ajouter une nouvelle fiche entreprise
+- Pouvoir inscrire un stagiaire
+- Pouvoir consulter la liste des ressources
+- Pouvoir se déconnecter
 
 ## 2. Illustration <a id="Illustration"> </a>
 
