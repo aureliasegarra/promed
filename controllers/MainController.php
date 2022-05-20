@@ -5,8 +5,7 @@
 function controleurPrincipal($action)
 {
     $lesActions = array();
-    $lesActions["home"] = "HomeController.php";  
-    $lesActions["connect"] = "InscriptionController.php";  
+    $lesActions["home"] = "HomeController.php";   
     $lesActions["inscription"] = "InscriptionController.php";
     $lesActions["accesPraticien"] = "PraticienController.php";
     $lesActions["accesPatient"] = "PatientController.php";
@@ -16,6 +15,7 @@ function controleurPrincipal($action)
     $lesActions["rdv"] = "RdvController.php";    
     $lesActions["accueilPatient"] = "AccueilPatientController.php";
     $lesActions["accueilPraticien"] = "AccueilPraticienController.php";
+    $lesActions["404"] = "404Controller.php";
 
 
     if (array_key_exists($action, $lesActions)) {

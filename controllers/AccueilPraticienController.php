@@ -106,8 +106,6 @@ function isLoggedOnPraticien()
             $praticien["rpps"] == $_SESSION["identifiant"] && $praticien["mot_de_passe"] == $_SESSION["mot_de_passe"]
         ) {
             $rep = true;
-        } else {
-            echo "Nope";
         }
     }
     return $rep;

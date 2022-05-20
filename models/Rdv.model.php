@@ -44,17 +44,7 @@ namespace Model {
 
             $row = $stmt->fetch();
 
-            // $id = $row["id"];
-            // $nom = $row["nom"];
-            // $prenom = $row["prenom"];
-            // $email = $row["email"];
-            // $activite = $row["activité"];
-            // $rpps = $row["rpps"];
 
-
-            // $rep = new \User\Praticien($nom, $prenom, $email, $activite, $rpps);
-            // $rep->setNom($nom);
-            // return $rep;
         }
 
         public function update($objet)

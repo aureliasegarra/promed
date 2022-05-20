@@ -33,7 +33,7 @@ namespace Model {
         }
 
 
-        /* constructeur de test pour l'ajout d'un patient*/
+        /* constructeur pour ajouter d'un patient*/
 
         public function Patient($nom, $prenom, $email, $activite, $numSecu, $mutuelle, $caisse, $nomTuteur, $datenaissance, $telephone, $sexe, $password)
         {
@@ -208,7 +208,7 @@ namespace Model {
 
 
 
-        /* recupere les infos du patient par son id*/
+        /* Recuperer un patient par son id*/
 
         public function read($id)
         {
@@ -222,8 +222,7 @@ namespace Model {
 
 
 
-
-        /* modifie un patient existant*/  /* NON EFFECTUE */
+        /* Modifier un patient */ 
 
         public function update($objet)
         {
@@ -241,7 +240,7 @@ namespace Model {
 
 
 
-        /* supprime un patient existant*/  /* NON EFFECTUE */
+        /* Supprimer un patient*/ 
 
         public function delete($id)
         {
@@ -262,7 +261,7 @@ namespace Model {
 
 
 
-        /* sauvegarde un nouveau patient */
+        /* Enregistrer un nouveau patient */
 
         public function create($objet)
         {
@@ -325,33 +324,35 @@ namespace Model {
 
 
 
-        /* recupere le tableau de rdv a afficher*/
+        /* Récupérer la liste des rdv */
 
         public function getTable()
         {
 
             $rdv = (new \Model\Rdv)->getRdvByPatient($_SESSION["id"]);
             $rep = "";
+            if ($rdv!=null){
+                foreach ($rdv as $row) {
 
-            foreach ($rdv as $row) {
+                    $heure = date_create($row->date_heure)->format('H:i');
+                    $date = date_create($row->date_heure)->format('d/m/Y');
 
-                $heure = date_create($row->date_heure)->format('H:i');
-                $date = date_create($row->date_heure)->format('d/m/Y');
-
-                $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th>
-							<td>" . $row->prenom . " " . $row->nom;
-                $rep .= "</td><td>" . $row->activite;
-                $rep .= "</td><td>" . $date;
-                $rep .= "</td><td>" . $heure;
-                $rep .= "</td><td>" . $row->type;
-                "</td></tr>";
+                    $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th>
+                                <td>" . $row->prenom . " " . $row->nom;
+                    $rep .= "</td><td>" . $row->activite;
+                    $rep .= "</td><td>" . $date;
+                    $rep .= "</td><td>" . $heure;
+                    $rep .= "</td><td>" . $row->type;
+                    "</td></tr>";
+                }
             }
-
+            else {
+                $rep="Pas de rendez vous";
+            }
             return $rep;
-        }
 
-
-
+            }   
 
     }
+
 }

@@ -1,3 +1,6 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<body> -->
 <div class="main-wrapper">
     <section class="connexion">
             <div class="container">
@@ -11,7 +14,7 @@
             </div>
     </section>
     <section class="container">
-    <form class="form-wrapper" method="post" action="./?action=connect">
+    <form class="form-wrapper" method="post" action="./?action=accueilPraticien&connect">
             <div class="mb-3">
                 <label class="form-label">N° RPPS</label>
                 <input type="text" name="rpps" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre n° RPPS" >
@@ -40,19 +43,6 @@
             </div>
         </div>
     </section>
-    <section class="footer-grid">
-        <div class="container-fluid">
-            
-        </div>
-    </section>
-    <section class="footer pt-5" id="footer">
-        <div class="container">
-            <div class="row copyright py-2">
-                <div class="col-xs-12 col-md-12 text-whit text-center">
-                    @2021 Promed App - Made in Breizh ♥️
-                </div>
-            </div>
-        </div>
-    </section>
+  
 </div>
 

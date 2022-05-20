@@ -3,9 +3,9 @@
 require_once PRATICIEN;
 
 /* Chargement des vues */
-include VIEW_PATH . "/layout_praticien.php";
+include VIEW_PATH . "/layout_accueil.php";
 include VIEW_PATH . "/inscription.php";
-include VIEW_PATH . "/footer.php";
+
 
 /* Vérification si il y a un save dans l'url */
 if (isset($_GET["save"])) {
@@ -31,6 +31,10 @@ if (isset($_GET["save"])) {
 
             /* Enregistrement du nouveau patient en BDD */
             $newPraticien->create($newPraticien);
+
+            header('Location : /accueil_praticien.php');
+            
+
         } 
     
     }

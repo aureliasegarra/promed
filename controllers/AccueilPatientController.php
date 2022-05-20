@@ -11,7 +11,6 @@ require_once RDV;
 
 logout();
 
-echo "page patient";
 
 
 /* verifie si il existe un POST identifiant et un POST password */
@@ -27,9 +26,7 @@ if (isset($_POST["identifiant"]) && isset($_POST["mot_de_passe_patient"])) {
     /* appel de la fonction loginPAtient avec les variables en parametres*/
 
     loginPatient($identifiant, $mdp);
-} else {
-    echo "Connection";
-}
+} 
 
 
 
@@ -59,10 +56,7 @@ function loginPatient($mail, $mdp)
         $_SESSION["mot_de_passe"] = $mdpBD;
         $_SESSION['id'] = $id;
     }
-    else {
-        echo "mdp";
-    }
-
+    
     /* appel de la fonction qui verifie si le patient est bien connecte */
 
     if (isLoggedOnPatient()) {
@@ -91,7 +85,7 @@ function isLoggedOnPatient()
 
     if (isset($_SESSION["identifiant"])) {
 
-        /* recuperation des infos du praticien par son mail et les compare avec les variables de session, retourne vrai si elles sont identiques*/
+        /* recuperation des infos du patient par son mail et les compare avec les variables de session, retourne vrai si elles sont identiques*/
 
         $patient = (new Model\Patient)->getPatientByMail($_SESSION["identifiant"]);
         if (
@@ -144,5 +138,5 @@ function displayPage()
     include_once VIEW_PATH . "/layout_patient.php";
     include_once VIEW_PATH . "/accueil_patient.php";
     include_once VIEW_PATH . "/footer.php";
-    echo "displayPage";
+    
 } 

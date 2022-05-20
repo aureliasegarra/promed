@@ -12,65 +12,11 @@ namespace Model{
     class Praticien extends DAO
     {
 
-        protected $id;
-        protected $nom;
-        protected $prenom;
-        protected $email;
-        protected $rpps;
-        protected $activite;
-        protected $mot_de_passe;
-
 
         function __construct()
         {
             parent::__construct("id", "praticien");
         }
-
-
-        /* Constrcteur Patient pour tester */
-        public function Praticien($nom, $prenom, $email, $rpps, $activite, $mot_de_passe)
-        {
-            $this->nom = $nom;
-            $this->prenom = $prenom;
-            $this->email = $email;
-            $this->rpps = $rpps;
-            $this->activite = $activite;
-            $this->mot_de_passe = $mot_de_passe;
-
-            return $this;
-        }
-
-        /* GETTERS & SETTERS */
-
-        public function getId(){
-                return $this->id;
-        }
-
-        public function getNom(){
-            return $this->nom;
-        }
-
-        public function getPrenom(){
-            return $this->prenom;
-        }
-
-        public function getEmail(){
-            return $this->email;
-        }
-
-        public function getRpps(){
-            return $this->rpps;
-        }
-
-        public function getActivite(){
-            return $this->activite;
-        }
-
-        public function getMdp(){
-            return $this->mot_de_passe;
-        }
-
-
 
 
         public function read($id)
@@ -82,18 +28,8 @@ namespace Model{
 
             return $stmt->fetch();
 
-            // $id = $row["id"];
-            // $nom = $row["nom"];
-            // $prenom = $row["prenom"];
-            // $email = $row["email"];
-            // $activite = $row["activité"];
-            // $rpps = $row["rpps"];
-
-
-            // $rep = new \Model\Praticien($nom, $prenom, $email, $activite, $rpps);
-            // $rep->setNom($nom);
-            // return $rep;
         }
+
 
         public function update($objet)
         {
@@ -122,16 +58,6 @@ namespace Model{
             $stmt->bindParam(':id', $id);
             $stmt->execute();
 
-
-
-            //  retour de l'erreur SQL
-            //
-            //  if($stmt->errorCode() > 0) {
-            // 		$errors = $stmt->errorInfo();
-            // 		die($errors[2]);
-            //  }
-
-
         }
 
         public function create($objet)
@@ -153,7 +79,7 @@ namespace Model{
             $stmt->bindParam(':mot_de_passe', $mot_de_passe);
 
             $stmt->execute();
-            /* $objet->setNom(parent::getLastKey()); */
+            //$objet->setNom(parent::getLastKey());
         }
 
         
@@ -181,25 +107,22 @@ namespace Model{
 
             $rdv = (new \Model\Rdv)->getRdvByPraticien($_SESSION["id"]);
             $rep = "";
-            if ($rdv != null) {
+            
                 foreach ($rdv as $row) {
 
                     $heure = date_create($row->date_heure)->format('H:i');
                     $date = date_create($row->date_heure)->format('d/m/Y');         
-
 
                     $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $date;
                     $rep .= "</td><td>" . $heure;
                     $rep .= "</td><td>" . $row->prenom . " " . $row->nom;
                     $rep .= "</td><td>" . $row->type;
                     "</td></tr>";
+        
                 }
-            } 
-            else {
-                $rep =  "<td>Pas de rendez vous ce jour</td>";
-               
-            }
             return $rep;
+            var_dump($rep);
+            
         }
     }
 }
