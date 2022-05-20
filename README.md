@@ -20,11 +20,12 @@
 
 ##  1. Description <a id="Description"> </a>
 Promed est un site web qui permet aux praticiens de s'insrire, de plannifier des rendez-vous pris par le client. 
-Le client ne peut que consulter son rendez-vous. 
-Le praticien valide ou annule le rendez-vous.
-Nous cherchons à développer une application permettant de recenser les différentes entreprises ayant déjà accepté d’anciens stagiaires du GRETA afin de faciliter les recherches des stagiaires de l’année en cours.
+<p>Le client ne peut que consulter son rendez-vous.</p> 
+<p>Le praticien valide ou annule le rendez-vous.</p>
+<p>Nous cherchons à développer une application permettant de recenser les différentes entreprises ayant déjà accepté d’anciens stagiaires du GRETA afin de faciliter les recherches des stagiaires de l’année en cours.</p>
 
-Cet outil est interne au GRETA de Vannes et n'a pas vocation à servir de plateforme d'échange direct entre les entreprises et les stagiaires. Il permet uniquement d’accéder à des ressources informatives.
+<p>Cet outil est interne au GRETA de Vannes et n'a pas vocation à servir de plateforme d'échange direct entre les entreprises et les stagiaires.</p> 
+<p>Il permet uniquement d’accéder à des ressources informatives.</p>
 
 ### Besoin <a id="Besoin"> </a>
 - pouvoir accéder à une base de données renfermant les informations nécessaires à la recherche d’un stage en entreprise.
@@ -35,7 +36,7 @@ l’application sera utilisée essentiellement par les stagiaires du Greta, elle
 
 ### MVP <a id="MVP"> </a>
 
- ##  En tant que stagiaire<a id="En tant que stagiaire:"> </a>
+ #  En tant que stagiaire:<a id="En tant que stagiaire:"> </a>
 
 - Pouvoir se connecter sur l'application
 - Pouvoir consulter la liste des entreprises
@@ -45,7 +46,7 @@ l’application sera utilisée essentiellement par les stagiaires du Greta, elle
 - Pouvoir accéder à la liste des ressources
 - Pouvoir se déconnecter
 
-##  En tant qu'admin<a id="tant qu'admin:"> </a>
+##  En tant qu'admin:<a id="tant qu'admin:"> </a>
 
 - pouvoir se connecter à l'application
 - Pouvoir consulter la liste des entreprises
@@ -66,12 +67,12 @@ l’application sera utilisée essentiellement par les stagiaires du Greta, elle
 
 ## 3. Objectif <a id="Objectif"> </a>
  
-<li>Découvrir le langage PHP</li>
-<li>Mettre en place un projet Promed</li>
-<li>Utiliser le patron de conception MVC</li>
-<li>Utiliser le design pattern Singleton</li>
-<li>Gérer la connection avec la base de données</li>
-<li>Créer une application web sécurisée</li>
+- Découvrir le langage PHP
+- Mettre en place un projet Promed
+- Utiliser le patron de conception MVC
+- Utiliser le design pattern Singleton
+- Gérer la connection avec la base de données
+- Créer une application web sécurisée
  
 ## 4. Langages <a id="Langages"> </a>
 
@@ -86,17 +87,17 @@ l’application sera utilisée essentiellement par les stagiaires du Greta, elle
 ### Outils <a id="Outils"> </a>
 
 ### Back <a id="Back"> </a>
-<li>Visual Studio Code</li>
-<li>MySQL</li>
-<li>Google Drive(Rédaction des documents)</li>
-<li>Discord</li>
-<li>GitHub</li>
+- Visual Studio Code
+- MySQL
+- Google Drive(Rédaction des documents)
+- Discord
+- GitHub
 
 ### Front <a id="Front"> </a>
-<li>Boostrap</li>
-<li>HTML5</li>
-<li>CSS3</li>
-<li>PHP</li>
+- Boostrap
+- HTML5
+- CSS3
+- PHP
 
 ## 5. Statut <a id="Statut"> </a>
 
