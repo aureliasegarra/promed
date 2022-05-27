@@ -14,9 +14,11 @@ define("MODEL_PATH", ROOT. "/models");
 /* definie des constantes indiquant le chemin des principales classes*/
 
 define("BD_CONNECT", MODEL_PATH.'/bdconnect.model.php');
-define("PATIENT", MODEL_PATH.'/Patient.model.php');
-define("PRATICIEN", MODEL_PATH.'/Praticien.model.php');
-define("RDV", MODEL_PATH.'/Rdv.model.php');
+define("PATIENT", MODEL_PATH.'/patient.model.php');
+define("PRATICIEN", MODEL_PATH.'/praticien.model.php');
+define("RDV", MODEL_PATH.'/rdv.model.php');
+define("ADRESSE", MODEL_PATH.'/adresse.model.php');
+
 
 /* definie des constantes indiquant le chemin des controllers */
 

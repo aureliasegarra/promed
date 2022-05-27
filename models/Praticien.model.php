@@ -12,6 +12,56 @@ namespace Model{
     class Praticien extends DAO
     {
 
+        protected $id;
+        protected $nom;
+        protected $prenom;
+        protected $email;
+        protected $rpps;
+        protected $activite;
+        protected $mot_de_passe;
+
+         /* Constrcteur Patient pour tester */
+         public function Praticien($nom, $prenom, $email, $rpps, $activite, $mot_de_passe)
+         {
+             $this->nom = $nom;
+             $this->prenom = $prenom;
+             $this->email = $email;
+             $this->rpps = $rpps;
+             $this->activite = $activite;
+             $this->mot_de_passe = $mot_de_passe;
+ 
+             return $this;
+         }
+ 
+         /* GETTERS & SETTERS */
+ 
+         public function getId(){
+                 return $this->id;
+         }
+ 
+         public function getNom(){
+             return $this->nom;
+         }
+ 
+         public function getPrenom(){
+             return $this->prenom;
+         }
+ 
+         public function getEmail(){
+             return $this->email;
+         }
+ 
+         public function getRpps(){
+             return $this->rpps;
+         }
+ 
+         public function getActivite(){
+             return $this->activite;
+         }
+ 
+         public function getMdp(){
+             return $this->mot_de_passe;
+         }
 
         function __construct()
         {
@@ -27,13 +77,12 @@ namespace Model{
             $stmt->execute();
 
             return $stmt->fetch();
-
+      
         }
-
 
         public function update($objet)
         {
-            $sql = "UPDATE praticien SET nom = :nom, prenom = :prenom, email = :email, activité= :activite, rpps=:rpps  WHERE $this->key=:id";
+            $sql = "UPDATE praticien SET nom = :nom, prenom = :prenom, email = :email, activite= :activite, rpps=:rpps  WHERE $this->key=:id";
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $nom = $objet->getNom();
             $prenom = $objet->getPrenom();
@@ -62,14 +111,16 @@ namespace Model{
 
         public function create($objet)
         {
-            $sql = "INSERT INTO praticien (nom,prenom,email,activite,rpps, mot_de_passe) VALUES (:nom, :prenom, :email, :activite, :rpps, :mot_de_passe)";
+            $sql = "INSERT INTO praticien (nom,prenom,email,activite,rpps,mot_de_passe) VALUES (:nom, :prenom, :email, :activite, :rpps, :mot_de_passe)";
             $stmt = Connexion::connexionPDO()->prepare($sql);
             $nom = $objet->getNom();
             $prenom = $objet->getPrenom();
             $email = $objet->getEmail();
             $activite = $objet->getActivite();
             $rpps = $objet->getRpps();
-            $mot_de_passe = $objet->getMdp();
+
+            $password=$objet->getMdp();
+            $mot_de_passe = password_hash($password,PASSWORD_DEFAULT);
 
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':prenom', $prenom);
@@ -79,10 +130,10 @@ namespace Model{
             $stmt->bindParam(':mot_de_passe', $mot_de_passe);
 
             $stmt->execute();
-            //$objet->setNom(parent::getLastKey());
+            $objet->setNom(parent::getLastKey());
         }
 
-        
+
 
         public function getPraticienByRpps($identifiant)
         {
@@ -113,16 +164,15 @@ namespace Model{
                     $heure = date_create($row->date_heure)->format('H:i');
                     $date = date_create($row->date_heure)->format('d/m/Y');         
 
+
                     $rep .= "<tr><th scope=\"row\"><i class=\"fa-solid fa-gear\"></i></th><td>" . $date;
                     $rep .= "</td><td>" . $heure;
                     $rep .= "</td><td>" . $row->prenom . " " . $row->nom;
                     $rep .= "</td><td>" . $row->type;
                     "</td></tr>";
-        
-                }
+           
+                 }
             return $rep;
-            var_dump($rep);
-            
         }
     }
 }

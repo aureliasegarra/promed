@@ -1,5 +1,6 @@
 <!-- <!DOCTYPE html>
 <html lang="en">
+
 <body> -->
 <div class="main-wrapper">
         <section class="connexion">
@@ -25,7 +26,9 @@
                             <label class="form-label">RENDEZ VOUS</label>
                             <input name="rdvDate" type="date" class="form-control mb-5">
                             <input name="rdvHeure" type="time" class="form-control mb-5">
+
                         </div>
+
                         <label class="form-label">TYPE DE PRISE EN CHARGE</label>
                         <select name="typeRdv" class="form-select form-control mb-5" aria-label="Default select example">
                             <option selected>Sélectionnez...</option>
@@ -38,6 +41,7 @@
                             <label class="form-label ml-3 mr-2 mt-1">REGLE</label> 
                             <input name="paiement" type="checkbox" class="mr-2 mt-2">
                         </div> 
+
                     </div>
                     <div class="col mb-5">
                         <div class="mb-3">
@@ -78,7 +82,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">DATE DE NAISSANCE</label>
-                            <input name='dateNaissance' type="date"" class="form-control" placeholder="Entrer la date de naissance du patient">
+                            <input name='dateNaissance' type="date" class="form-control" placeholder="Entrer la date de naissance du patient">
                         </div>              
                         <div class="mb-3">
                             <label class="form-label">TUTEUR</label>
@@ -97,8 +101,12 @@
                 <div class="d-flex justify-content-center mt-3">
                     <button type="submit" class="btn btn-primary btn-lg mb-5 ">Enregistrer</button>
                     </form>
+
                 </div>
+
             </div>
+
         </section>
 <!-- </body>
+
 </html> -->

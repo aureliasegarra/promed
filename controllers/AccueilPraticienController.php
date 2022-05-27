@@ -11,14 +11,13 @@ require_once RDV;
 
 
 
-
 /* verifie si il y a connect dans l'url*/
 
 if (isset($_GET["connect"])) {
 
     /* verifie si il existe un POST rpps et un POST password */
 
-    if (isset($_POST["rpps"]) && isset($_POST["mot_de_passe_praticien"])) {
+    if (isset($_POST["rpps"]) && $_POST['rpps']!=null && isset($_POST["mot_de_passe_praticien"]) && $_POST['mot_de_passe_praticien']!=null) {
 
         /* enregistre la valeur du POST rpps et du POST password dans des variables*/
 
@@ -63,7 +62,7 @@ function loginPraticien($rpps, $mdp)
 
     /* si le mot de passe du formulaire correspond au mot de passe de la bd on les stock dans les variables de session */
 
-    if ($mdpBD == $mdp) {
+    if (password_verify($mdp, $mdpBD)) {
 
         $_SESSION["identifiant"] = $rpps;
         $_SESSION["mot_de_passe"] = $mdpBD;
